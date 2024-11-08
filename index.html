@@ -18,50 +18,98 @@
         <!-- Font Awesome for consistent icon support -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+        <!-- Additional padding styles to adjust icon position, square/card size, and spacing -->
         <style>
-            /* General styling */
             body {
                 font-family: Arial, sans-serif;
+                font-size: 1rem;
                 line-height: 1.5;
                 color: #333;
             }
 
-            .Newsletter-area {
-                padding: 80px 0;
+            h1.bigheadline {
+                font-size: 3rem;
+                font-weight: bold;
+                color: #222;
+                font-family: "Georgia", serif;
             }
 
-            .Newsletter .Newsletter-wrap {
-                margin: 20px;
-                padding: 20px;
-                width: 280px;
-                height: 280px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                border: 2px solid #000;
-                border-radius: 15px;
+            h3.subheadline {
+                font-size: 2rem;
+                font-weight: normal;
+                color: #555;
+                font-family: "Verdana", sans-serif;
+            }
+
+            h2.block_title {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #000;
+                font-family: "Courier New", monospace;
             }
 
             .Newsletter-wrap i {
                 font-size: 2.5rem;
-                margin-top: 20px;
-                margin-bottom: 10px;
+                color: #e07b70;
             }
 
-            .container {
-                padding: 0 40px;
+            .Newsletter h3 {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: #333;
+                font-family: "Arial", sans-serif;
+            }
+
+            .Newsletter p {
+                font-size: 1.2rem;
+                color: #666;
+                font-family: "Tahoma", sans-serif;
+            }
+
+            .post h3 {
+                font-size: 1.75rem;
+                font-weight: bold;
+                color: #444;
+                font-family: "Helvetica", sans-serif;
+            }
+
+            .post p {
+                font-size: 1.25rem;
+                font-weight: normal;
+                color: #555;
+                font-family: "Times New Roman", serif;
+            }
+
+            .post a {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #fff;
+                background-color: #e07b70;
+                border-radius: 5px;
+                padding: 10px 20px;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .post a:hover {
+                background-color: #d06560;
+            }
+
+            footer p {
+                font-size: 1rem;
+                color: #666;
+                font-family: "Arial", sans-serif;
+            }
+
+            /* Additional spacing and layout adjustments */
+            .Newsletter-area {
+                padding: 80px 0;
             }
 
             #header {
                 padding: 80px 0;
             }
 
-            footer {
-                padding: 60px 0;
-            }
-
-            /* Styles for the Posts Section */
             .posts-section {
                 padding: 50px 0;
                 text-align: center;
@@ -80,22 +128,6 @@
                 background-color: #ffffff;
                 text-align: left;
             }
-
-            .post a {
-                display: inline-block;
-                padding: 10px 20px;
-                color: #ffffff;
-                background-color: #e07b70;
-                border: none;
-                border-radius: 5px;
-                text-decoration: none;
-                transition: background-color 0.3s ease;
-                margin-top: 10px;
-            }
-
-            .post a:hover {
-                background-color: #d06560;
-            }
         </style>
     </head>
     <body id="body">
@@ -103,12 +135,12 @@
         <!-- Header area -->
         <header id="header">
             <div class="center text-center">
-                <h1 class="bigheadline" style="font-size: 3rem; font-weight: bold; color: #333;">Vanderson Baril</h1>
-                <h3 class="subheadline" style="font-size: 2rem; color: #666;">Transforming Project Management Insights Into Real-World Productivity Gains!</h3>
+                <h1 class="bigheadline">Vanderson Baril</h1>
+                <h3 class="subheadline">Transforming Project Management Insights Into Real-World Productivity Gains!</h3>
             </div>
             <div class="bottom">
-                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent" style="font-size: 1.5rem; color: #666;">
-                    <i class="fas fa-angle-down"></i>
+                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent">
+                    <i class="fas fa-angle-down" style="font-size: 2rem; color: #333;"></i>
                 </a>
             </div>
         </header>
@@ -119,7 +151,7 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="logo">
-                            <a data-scroll href="#body" class="logo-text" style="font-size: 1.5rem; font-weight: bold; color: #333;">Vanderson Baril</a>
+                            <a data-scroll href="#body" class="logo-text" style="font-size: 1.5rem; color: #333;">Vanderson Baril</a>
                         </div>
                     </div>
                     <div class="col-xs-6">
@@ -130,8 +162,8 @@
                             <div class="dropdown-menu">
                                 <div class="arrow-up"></div>
                                 <ul>
-                                    <li><a data-scroll href="#body" style="font-size: 1.5rem; color: #333;">Home <i class="fas fa-home"></i></a><span class="menu-effect"></span></li>
-                                    <li><a data-scroll href="#Newsletter" style="font-size: 1.5rem; color: #333;">Newsletter <i class="fas fa-cog"></i></a><span class="menu-effect"></span></li>
+                                    <li><a data-scroll href="#body" style="font-size: 1.2rem; color: #444;">Home <i class="fas fa-home"></i></a></li>
+                                    <li><a data-scroll href="#Newsletter" style="font-size: 1.2rem; color: #444;">Newsletter <i class="fas fa-cog"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -143,25 +175,51 @@
         <!-- Newsletter section -->
         <section id="Newsletter" class="Newsletter-area">
             <div class="container">
-                <h2 class="block_title" style="font-size: 2.5rem; font-weight: bold; color: #333;">The Saturday Mindset Newsletter</h2>
+                <h2 class="block_title">The Saturday Mindset Newsletter</h2>
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
                             <div class="Newsletter-wrap">    
-                                <i class="fas fa-lightbulb" style="color: #e07b70;"></i>
-                                <h3 style="font-size: 2rem; color: #333;">Weekly Productivity Insights</h3>
-                                <p style="font-size: 1.5rem; color: #666;">Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Weekly Productivity Insights</h3>
+                                <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Other Newsletter items with individual styling -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="Newsletter">
+                            <div class="Newsletter-wrap">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Growth-Focused Strategies</h3>
+                                <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="Newsletter">
+                            <div class="Newsletter-wrap">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Real-Life Applications</h3>
+                                <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="Newsletter">
+                            <div class="Newsletter-wrap">
+                                <i class="fas fa-share-alt"></i>
+                                <h3>Join the Journey</h3>
+                                <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
         <!-- Section to Display Three Posts -->
         <section id="posts-section" class="posts-section">
-            <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Read Articles</h2>
+            <h2>Read Articles</h2>
             <div id="posts-container">
                 <!-- Posts will be loaded here by JavaScript -->
             </div>
@@ -175,7 +233,7 @@
                         <ul class="socialinks">
                             <li class="social-icons">
                                 <a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
-                                    <i class="pe-7s-linkedin" style="font-size: 1.5rem; color: #666;"></i>
+                                    <i class="fas fa-linkedin" style="font-size: 2rem; color: #0077b5;"></i>
                                 </a>
                             </li>
                         </ul>
@@ -189,7 +247,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p class="copyright" style="font-size: 1.5rem; color: #666;">© <span id="currentYear"></span> Vanderson Baril</p>
+                        <p class="copyright">© <span id="currentYear"></span> Vanderson Baril</p>
                     </div>
                 </div>
             </div>
@@ -197,20 +255,26 @@
 
         <!-- JavaScript for Displaying Posts -->
         <script>
-            // Set current year in footer
             document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-            // Array of post data
             const posts = [
                 {
                     title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
                     snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
                     link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
                 },
-                // Additional posts
+                {
+                    title: "8 Essential Skills Every Project Leader Needs Today",
+                    snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
+                    link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
+                },
+                {
+                    title: "Project Management Trends to Watch in 2025",
+                    snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
+                    link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
+                }
             ];
 
-            // Function to display posts
             function displayPosts() {
                 const postsContainer = document.getElementById("posts-container");
 
@@ -219,9 +283,9 @@
                     postElement.classList.add("post");
 
                     postElement.innerHTML = `
-                        <h3 style="font-size: 2rem; color: #333;">${post.title}</h3>
-                        <p style="font-size: 1.5rem; color: #666;">${post.snippet}</p>
-                        <a href="${post.link}" target="_blank" style="font-size: 1.5rem; color: #fff; background-color: #e07b70;">Read More</a>
+                        <h3>${post.title}</h3>
+                        <p>${post.snippet}</p>
+                        <a href="${post.link}" target="_blank">Read More</a>
                     `;
 
                     postsContainer.appendChild(postElement);
