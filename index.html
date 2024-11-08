@@ -17,9 +17,6 @@
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- Feather Icons for lightweight outline icons -->
-        <script src="https://unpkg.com/feather-icons"></script>
-
         <!-- additional padding styles to increase white space -->
         <style>
             .Newsletter-area {
@@ -165,14 +162,19 @@
             </div>
         </footer>
 
+        <!-- Necessary scripts -->
         <script>
             // JavaScript to set the current year
             document.getElementById("currentYear").textContent = new Date().getFullYear();
-            // Initialize Feather Icons
+        </script>
+        
+        <!-- Feather Icons script placed at the end -->
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+            // Initialize Feather Icons after loading
             feather.replace();
         </script>
 
-        <!-- Necessary scripts -->
         <script src="assets/js/jquery-2.1.3.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
