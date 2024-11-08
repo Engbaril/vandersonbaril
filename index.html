@@ -18,68 +18,61 @@
         <!-- Font Awesome for consistent icon support -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <!-- Standardized Font Styles -->
+        <!-- Additional padding styles to adjust icon position, square/card size, and spacing -->
         <style>
-            /* Base Font and Colors */
+            /* Standardized font sizes and family */
             body {
                 font-family: Arial, sans-serif;
-                font-size: 1rem; /* Base font size */
+                font-size: 1rem;
                 line-height: 1.5;
                 color: #333;
             }
 
-            /* Headings */
-            h1, .bigheadline {
+            h1 {
                 font-size: 2.5rem;
                 font-weight: bold;
-                color: #333;
             }
 
-            h2, .block_title {
+            h2 {
                 font-size: 2rem;
                 font-weight: bold;
-                color: #333;
                 margin-bottom: 0.75rem;
             }
 
-            h3, .subheadline {
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: #333;
+            h3 {
+                font-size: 1.75rem;
                 margin-bottom: 0.5rem;
             }
 
-            /* Paragraph Text */
             p {
                 font-size: 1rem;
-                color: #555;
                 margin-bottom: 1rem;
             }
 
-            /* Button/Text Link */
-            .post a, .Newsletter-wrap a {
+            /* Other Elements */
+            #header h1.bigheadline {
+                font-size: 2.5rem;
+            }
+
+            #header h3.subheadline {
+                font-size: 1.25rem;
+            }
+
+            .post h3 {
+                font-size: 1.75rem;
+            }
+
+            .post p {
                 font-size: 1rem;
-                color: #ffffff;
-                background-color: #e07b70;
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
-                margin-top: 10px;
             }
 
-            .post a:hover, .Newsletter-wrap a:hover {
-                background-color: #d06560;
+            .post a {
+                font-size: 1rem;
             }
 
-            /* Additional Section Styles */
-            #header {
-                padding: 80px 0;
-            }
-
+            /* Newsletter and Post Styles */
             .Newsletter-area {
                 padding: 80px 0;
-                text-align: center;
             }
 
             .Newsletter .Newsletter-wrap {
@@ -97,21 +90,35 @@
 
             .Newsletter-wrap i {
                 font-size: 2.5rem;
-                color: #333;
                 margin-top: 20px;
                 margin-bottom: 10px;
             }
 
+            .container {
+                padding: 0 40px;
+            }
+
+            #header {
+                padding: 80px 0;
+            }
+
+            footer {
+                padding: 60px 0;
+            }
+
+            /* Styles for the Posts Section */
             .posts-section {
                 padding: 50px 0;
+                text-align: center;
                 background-color: #f9f9f9;
                 border-top: 1px solid #ddd;
-                text-align: center;
             }
 
             .post {
+                margin-bottom: 30px;
                 max-width: 600px;
-                margin: 20px auto;
+                margin-left: auto;
+                margin-right: auto;
                 padding: 20px;
                 border: 1px solid #ddd;
                 border-radius: 5px;
@@ -119,25 +126,20 @@
                 text-align: left;
             }
 
-            /* Footer */
-            footer {
-                padding: 60px 0;
-                color: #555;
+            .post a {
+                display: inline-block;
+                padding: 10px 20px;
+                color: #ffffff;
+                background-color: #e07b70;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                margin-top: 10px;
             }
 
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                h1, .bigheadline {
-                    font-size: 2rem;
-                }
-
-                h2, .block_title {
-                    font-size: 1.5rem;
-                }
-
-                h3, .subheadline {
-                    font-size: 1.25rem;
-                }
+            .post a:hover {
+                background-color: #d06560;
             }
         </style>
     </head>
@@ -167,8 +169,8 @@
                             <div class="dropdown-menu">
                                 <div class="arrow-up"></div>
                                 <ul>
-                                    <li><a data-scroll href="#body">Home <i class="fas fa-home"></i></a></li>
-                                    <li><a data-scroll href="#Newsletter">Newsletter <i class="fas fa-cog"></i></a></li>
+                                    <li><a data-scroll href="#body">Home <i class="fas fa-home"></i></a><span class="menu-effect"></span></li>
+                                    <li><a data-scroll href="#Newsletter">Newsletter <i class="fas fa-cog"></i></a><span class="menu-effect"></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -230,6 +232,23 @@
             </div>
         </section>
 
+        <!-- Social Area -->
+        <div id="social">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="socialinks">
+                            <li class="social-icons">
+                                <a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+                                    <i class="pe-7s-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer Area -->
         <footer>
             <div class="container">
@@ -243,12 +262,59 @@
 
         <!-- JavaScript for Displaying Posts -->
         <script>
+            // Set current year in footer
             document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+            // Array of post data
+            const posts = [
+                {
+                    title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
+                    snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
+                    link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
+                },
+                {
+                    title: "8 Essential Skills Every Project Leader Needs Today",
+                    snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
+                    link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
+                },
+                {
+                    title: "Project Management Trends to Watch in 2025",
+                    snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
+                    link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
+                }
+            ];
+
+            // Function to display posts
+            function displayPosts() {
+                const postsContainer = document.getElementById("posts-container");
+
+                // Loop through each post and create HTML for it
+                posts.forEach(post => {
+                    const postElement = document.createElement("div");
+                    postElement.classList.add("post");
+
+                    postElement.innerHTML = `
+                        <h3>${post.title}</h3>
+                        <p>${post.snippet}</p>
+                        <a href="${post.link}" target="_blank">Read More</a>
+                    `;
+
+                    // Append each post to the container
+                    postsContainer.appendChild(postElement);
+                });
+            }
+
+            // Display the posts when the page loads
+            document.addEventListener("DOMContentLoaded", displayPosts);
         </script>
 
         <!-- Necessary scripts -->
         <script src="assets/js/jquery-2.1.3.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="assets/js/jquery.actual.min.js"></script>
+        <script src="assets/js/smooth-scroll.js"></script>
+        <script src="assets/js/owl.carousel.js"></script>
         <script src="assets/js/script.js"></script>
 
     </body>
