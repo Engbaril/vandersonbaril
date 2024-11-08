@@ -18,7 +18,7 @@
         <!-- Font Awesome for consistent icon support -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <!-- Additional padding styles to increase white space -->
+        <!-- Additional padding styles to adjust icon position -->
         <style>
             .Newsletter-area {
                 padding: 100px 0;
@@ -29,11 +29,16 @@
                 padding: 50px;
                 width: 300px;
                 height: 300px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
             }
 
             .Newsletter-wrap i {
                 font-size: 3rem;
-                margin-bottom: 15px;
+                margin-top: 20px; /* Adjusts space above the icon */
+                margin-bottom: 10px; /* Adds more space below the icon to push text down */
             }
 
             .container {
@@ -92,7 +97,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
-                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; overflow: hidden;">    
+                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000;">    
                                 <i class="fas fa-lightbulb"></i>
                                 <h3>Weekly Productivity Insights</h3>
                                 <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
@@ -101,8 +106,8 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
-                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; overflow: hidden;">
-                                <i class="fas fa-rocket"></i> <!-- Font Awesome Rocket Icon -->
+                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000;">
+                                <i class="fas fa-rocket"></i>
                                 <h3>Growth-Focused Strategies</h3>
                                 <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
                             </div>
@@ -110,7 +115,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
-                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; overflow: hidden;">
+                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000;">
                                 <i class="fas fa-check-circle"></i>
                                 <h3>Real-Life Applications</h3>
                                 <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
@@ -119,7 +124,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
-                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; overflow: hidden;">
+                            <div class="Newsletter-wrap" style="border-radius: 50%; border: 2px solid #000;">
                                 <i class="fas fa-share-alt"></i>
                                 <h3>Join the Journey</h3>
                                 <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
