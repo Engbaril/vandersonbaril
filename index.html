@@ -10,81 +10,37 @@
         
         <!-- stylesheets -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
-        <link rel="stylesheet" href="assets/font_icon/css/helper.css">
         <link rel="stylesheet" href="assets/css/owl.carousel.css">
         <link rel="stylesheet" href="assets/css/owl.theme.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- Heroicons for refined, outline icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/heroicons/1.0.6/outline/heroicons-outline.min.css">
+        <!-- Font Awesome for consistent icon support -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <!-- Additional CSS for button and spacing -->
+        <!-- Additional padding styles to adjust icon position, square/card size, and spacing -->
         <style>
             .Newsletter-area {
                 padding: 100px 0;
             }
 
-            .newsletter-button {
-                display: inline-block;
-                padding: 10px 20px;
-                font-size: 1rem;
-                color: #ffffff;
-                background-color: #e07b70; /* Adjust to your brand color */
-                border: none;
-                border-radius: 5px;
-                text-align: center;
-                text-decoration: none;
-                transition: background-color 0.3s ease;
-            }
-
-            .newsletter-button:hover {
-                background-color: #d06560; /* Slightly darker shade on hover */
-            }
-
             .Newsletter .Newsletter-wrap {
-                margin: 40px auto;
-                padding: 50px; /* Adjust padding inside circles */
-                width: 320px; /* Reduced circle width */
-                height: 320px; /* Reduced circle height */
-                border-radius: 50%;
-                border: 2px solid #000;
+                margin: 20px; /* Adjust margin to ensure even spacing */
+                padding: 30px;
+                width: 300px; /* Square shape */
+                height: 300px;
                 display: flex;
-                align-items: center;
-                justify-content: center;
                 flex-direction: column;
-                text-align: center;
-                overflow: hidden;
+                align-items: center;
+                justify-content: flex-start;
+                border: 2px solid #000;
+                border-radius: 15px; /* Slight rounding to give a modern card look */
             }
 
-            .Newsletter-wrap i, .Newsletter-wrap svg {
-                font-size: 3rem;
-                color: #000;
-                fill: none;
-                stroke: #000;
-                stroke-width: 1.5;
-                margin-bottom: 15px;
-            }
-
-            .Newsletter-wrap h3 {
-                font-size: 1.25rem;
-                font-weight: 600;
+            .Newsletter-wrap i {
+                font-size: 2.5rem;
+                margin-top: 20px;
                 margin-bottom: 10px;
-            }
-
-            .Newsletter-wrap p {
-                font-size: 1rem;
-                line-height: 1.5;
-                max-width: 85%;
-                margin: 0 auto;
-            }
-
-            .Newsletter .row {
-                display: flex;
-                justify-content: space-evenly;
-                gap: 30px;
-                flex-wrap: wrap;
             }
 
             .container {
@@ -99,12 +55,6 @@
                 padding: 60px 0;
             }
         </style>
-
-        <!-- google fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
-
-        <script src="assets/js/modernizr.js"></script>
-
     </head>
     <body id="body">
 
@@ -113,10 +63,9 @@
             <div class="center text-center">
                 <h1 class="bigheadline" style="font-size: 5rem;">Vanderson Baril</h1>
                 <h3 class="subheadline" style="font-size: 3rem;">Transforming Project Management Insights Into Real-World Productivity Gains!</h3>
-                <a href="https://thesaturdaymindset.com/" target="_blank" class="newsletter-button">Subscribe to the Newsletter</a>
             </div>
             <div class="bottom">
-                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent"><i class="pe-7s-angle-down-circle pe-va"></i></a>
+                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent"><i class="fas fa-angle-down"></i></a>
             </div>
         </header>
 
@@ -129,12 +78,12 @@
                     </div>
                     <div class="col-xs-6">
                         <div class="nav">
-                            <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown"><i class="pe-7s-menu"></i></a>
+                            <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
                             <div class="dropdown-menu">
                                 <div class="arrow-up"></div>
                                 <ul>
-                                    <li><a data-scroll href="#body">Home <i class="pe-7s-home"></i></a><span class="menu-effect"></span></li>
-                                    <li><a data-scroll href="#Newsletter">Newsletter <i class="pe-7s-config"></i></a><span class="menu-effect"></span></li>
+                                    <li><a data-scroll href="#body">Home <i class="fas fa-home"></i></a><span class="menu-effect"></span></li>
+                                    <li><a data-scroll href="#Newsletter">Newsletter <i class="fas fa-cog"></i></a><span class="menu-effect"></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -143,9 +92,7 @@
             </div>            
         </section>
         
-        <!-- Content Area -->
-        
-        <!-- Newsletter section with embedded signup form -->
+        <!-- Newsletter section -->
         <section id="Newsletter" class="Newsletter-area">
             <div class="container">
                 <h2 class="block_title">The Saturday Mindset Newsletter</h2>
@@ -153,7 +100,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
                             <div class="Newsletter-wrap">    
-                                <i class="pe-7s-light pe-dj pe-va"></i>
+                                <i class="fas fa-lightbulb"></i>
                                 <h3>Weekly Productivity Insights</h3>
                                 <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
                             </div>
@@ -162,9 +109,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
                             <div class="Newsletter-wrap">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 3rem; height: 3rem;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 2.25a6 6 0 00-6 6c0 1.19.349 2.341.955 3.326a7.125 7.125 0 013.2-1.94 9.12 9.12 0 01.217-3.6 9.12 9.12 0 013.6-.217A7.125 7.125 0 0115 2.25a6 6 0 00-5.25-4zm4.008 8.626l-4.627 4.627M9 21.75c.46-.256.89-.58 1.272-.942m4.097-4.122l3.222 3.222m.6-3.207L14.256 8.61M8.61 14.256L6.017 16.85m10.233-10.233c-.13-.25-.262-.506-.392-.774M8.61 8.61c-.25-.13-.506-.262-.774-.392m10.233 10.233c.68-.68.68-1.787 0-2.466m-10.71.978c-.25-.13-.506-.262-.774-.392"/>
-                                </svg>
+                                <i class="fas fa-rocket"></i>
                                 <h3>Growth-Focused Strategies</h3>
                                 <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
                             </div>
@@ -173,7 +118,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
                             <div class="Newsletter-wrap">
-                                <i class="pe-7s-check pe-dj pe-va"></i>
+                                <i class="fas fa-check-circle"></i>
                                 <h3>Real-Life Applications</h3>
                                 <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
                             </div>
@@ -182,32 +127,33 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="Newsletter">
                             <div class="Newsletter-wrap">
-                                <i class="pe-7s-share pe-dj pe-va"></i>
+                                <i class="fas fa-share-alt"></i>
                                 <h3>Join the Journey</h3>
                                 <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Embedded signup form -->
-                <div id="beehiiv-embed" data-embed="https://thesaturdaymindset.com/embed" style="margin-top: 40px;"></div>
-                <script src="https://thesaturdaymindset.com/embed.js" type="text/javascript"></script>
             </div>
         </section>
         
         <!-- Social Area -->
-        <div id="social">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <ul class="socialinks">
-                            <li class="social-icons"><a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank"><i class="pe-7s-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+      <div id="social">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="socialinks">
+                    <li class="social-icons">
+                        <a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+                            <i class="pe-7s-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
+</div>
+
         
         <!-- Footer Area -->
         <footer>
@@ -216,14 +162,12 @@
                     <div class="col-sm-6">
                         <p class="copyright">© Copyright <span id="currentYear"></span> Vanderson Baril</p>
                     </div>
-                    <div class="col-sm-6">
-                        <a href="https://thesaturdaymindset.com/" target="_blank" class="newsletter-button">Subscribe to the Newsletter</a>
-                    </div>
                 </div>
             </div>
         </footer>
 
         <script>
+            // JavaScript to set the current year
             document.getElementById("currentYear").textContent = new Date().getFullYear();
         </script>
 
