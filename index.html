@@ -25,16 +25,16 @@
             }
 
             .Newsletter .Newsletter-wrap {
-                margin: 20px; /* Adjust margin to ensure even spacing */
+                margin: 20px;
                 padding: 30px;
-                width: 300px; /* Square shape */
+                width: 300px;
                 height: 300px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 border: 2px solid #000;
-                border-radius: 15px; /* Slight rounding to give a modern card look */
+                border-radius: 15px;
             }
 
             .Newsletter-wrap i {
@@ -53,6 +53,54 @@
 
             footer {
                 padding: 60px 0;
+            }
+
+            /* Styles for the Posts Section */
+            .posts-section {
+                padding: 50px 0;
+                text-align: center;
+                background-color: #f9f9f9;
+                border-top: 1px solid #ddd;
+            }
+
+            .post {
+                margin-bottom: 30px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                background-color: #ffffff;
+                text-align: left;
+            }
+
+            .post h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .post p {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.5;
+            }
+
+            .post a {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 1rem;
+                color: #ffffff;
+                background-color: #e07b70;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                margin-top: 10px;
+            }
+
+            .post a:hover {
+                background-color: #d06560;
             }
         </style>
     </head>
@@ -137,38 +185,88 @@
             </div>
         </section>
         
+        <!-- Section to Display Three Posts -->
+        <section id="posts-section" class="posts-section">
+            <h2>Insights from The Saturday Mindset</h2>
+            <div id="posts-container">
+                <!-- Posts will be loaded here by JavaScript -->
+            </div>
+        </section>
+
         <!-- Social Area -->
-      <div id="social">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <ul class="socialinks">
-                    <li class="social-icons">
-                        <a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
-                            <i class="pe-7s-linkedin"></i>
-                        </a>
-                    </li>
-                </ul>
+        <div id="social">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="socialinks">
+                            <li class="social-icons">
+                                <a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+                                    <i class="pe-7s-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-        
         <!-- Footer Area -->
         <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p class="copyright">© Copyright <span id="currentYear"></span> Vanderson Baril</p>
+                        <p class="copyright">© <span id="currentYear"></span> Vanderson Baril</p>
                     </div>
                 </div>
             </div>
         </footer>
 
+        <!-- JavaScript for Displaying Posts -->
         <script>
-            // JavaScript to set the current year
+            // Set current year in footer
             document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+            // Array of post data
+            const posts = [
+                {
+                    title: "Understanding Project Phases",
+                    snippet: "Learn about the key phases in project management and how each contributes to successful project outcomes...",
+                    link: "https://thesaturdaymindset.com/understanding-project-phases"
+                },
+                {
+                    title: "Effective Time Management Techniques",
+                    snippet: "Discover strategies to manage your time more effectively and maximize productivity in your daily tasks...",
+                    link: "https://thesaturdaymindset.com/effective-time-management"
+                },
+                {
+                    title: "Delegation Skills for Leaders",
+                    snippet: "Explore best practices for delegation to empower your team and enhance project success...",
+                    link: "https://thesaturdaymindset.com/delegation-skills-for-leaders"
+                }
+            ];
+
+            // Function to display posts
+            function displayPosts() {
+                const postsContainer = document.getElementById("posts-container");
+
+                // Loop through each post and create HTML for it
+                posts.forEach(post => {
+                    const postElement = document.createElement("div");
+                    postElement.classList.add("post");
+
+                    postElement.innerHTML = `
+                        <h3>${post.title}</h3>
+                        <p>${post.snippet}</p>
+                        <a href="${post.link}" target="_blank">Read More</a>
+                    `;
+
+                    // Append each post to the container
+                    postsContainer.appendChild(postElement);
+                });
+            }
+
+            // Display the posts when the page loads
+            document.addEventListener("DOMContentLoaded", displayPosts);
         </script>
 
         <!-- Necessary scripts -->
