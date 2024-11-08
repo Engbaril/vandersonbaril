@@ -1,184 +1,239 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <title>Vanderson Baril</title>
+<head>
+    <title>Vanderson Baril</title>
 
-        <!-- meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <!-- stylesheets -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!-- Font Awesome for consistent icon support -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- Additional padding styles to adjust icon position, square/card size, and spacing -->
-        <style>
-            .Newsletter-area {
-                padding: 100px 0;
-            }
+    <!-- Font Awesome for consistent icon support -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-            .Newsletter .Newsletter-wrap {
-                margin: 20px; /* Adjust margin to ensure even spacing */
-                padding: 30px;
-                width: 300px; /* Square shape */
-                height: 300px;
+    <!-- Additional responsive styles -->
+    <style>
+        /* General padding adjustments */
+        .Newsletter-area {
+            padding: 50px 0;
+        }
+
+        /* Responsive adjustments for newsletter card */
+        .Newsletter .Newsletter-wrap {
+            margin: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border: 2px solid #000;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+
+        .Newsletter-wrap i {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Header and container adjustments */
+        .container {
+            padding: 0 20px;
+        }
+
+        #header {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        /* Responsive font sizes */
+        .bigheadline {
+            font-size: 3rem;
+        }
+
+        .subheadline {
+            font-size: 1.5rem;
+        }
+
+        /* Responsive footer and other adjustments */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Social icons */
+        .socialinks {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            list-style: none;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Adjusting grid layout for smaller screens */
+        @media (max-width: 768px) {
+            .Newsletter-area .row {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-start;
-                border: 2px solid #000;
-                border-radius: 15px; /* Slight rounding to give a modern card look */
             }
 
-            .Newsletter-wrap i {
+            .bigheadline {
                 font-size: 2.5rem;
-                margin-top: 20px;
-                margin-bottom: 10px;
             }
 
-            .container {
-                padding: 0 40px;
+            .subheadline {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .Newsletter-wrap {
+                padding: 20px;
+                width: 90%;
             }
 
-            #header {
-                padding: 80px 0;
+            .bigheadline {
+                font-size: 2rem;
             }
 
-            footer {
-                padding: 60px 0;
+            .subheadline {
+                font-size: 1rem;
             }
-        </style>
-    </head>
-    <body id="body">
+        }
+    </style>
+</head>
+<body id="body">
 
-        <!-- Header area -->
-        <header id="header">
-            <div class="center text-center">
-                <h1 class="bigheadline" style="font-size: 5rem;">Vanderson Baril</h1>
-                <h3 class="subheadline" style="font-size: 3rem;">Transforming Project Management Insights Into Real-World Productivity Gains!</h3>
-            </div>
-            <div class="bottom">
-                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent"><i class="fas fa-angle-down"></i></a>
-            </div>
-        </header>
+    <!-- Header area -->
+    <header id="header">
+        <div class="center text-center">
+            <h1 class="bigheadline">Vanderson Baril</h1>
+            <h3 class="subheadline">Transforming Project Management Insights Into Real-World Productivity Gains!</h3>
+        </div>
+        <div class="bottom">
+            <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent"><i class="fas fa-angle-down"></i></a>
+        </div>
+    </header>
 
-        <!-- Navigation area -->
-        <section id="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="logo"><a data-scroll href="#body" class="logo-text">Vanderson Baril</a></div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="nav">
-                            <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
-                            <div class="dropdown-menu">
-                                <div class="arrow-up"></div>
-                                <ul>
-                                    <li><a data-scroll href="#body">Home <i class="fas fa-home"></i></a><span class="menu-effect"></span></li>
-                                    <li><a data-scroll href="#Newsletter">Newsletter <i class="fas fa-cog"></i></a><span class="menu-effect"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Navigation area -->
+    <section id="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="logo"><a data-scroll href="#body" class="logo-text">Vanderson Baril</a></div>
                 </div>
-            </div>            
-        </section>
-        
-        <!-- Newsletter section -->
-        <section id="Newsletter" class="Newsletter-area">
-            <div class="container">
-                <h2 class="block_title">The Saturday Mindset Newsletter</h2>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">    
-                                <i class="fas fa-lightbulb"></i>
-                                <h3>Weekly Productivity Insights</h3>
-                                <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">
-                                <i class="fas fa-rocket"></i>
-                                <h3>Growth-Focused Strategies</h3>
-                                <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">
-                                <i class="fas fa-check-circle"></i>
-                                <h3>Real-Life Applications</h3>
-                                <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">
-                                <i class="fas fa-share-alt"></i>
-                                <h3>Join the Journey</h3>
-                                <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
-                            </div>
+                <div class="col-6 text-right">
+                    <div class="nav">
+                        <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown"><i class="fas fa-bars"></i></a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a data-scroll href="#body">Home <i class="fas fa-home"></i></a></li>
+                                <li><a data-scroll href="#Newsletter">Newsletter <i class="fas fa-cog"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Social Area -->
-      <div id="social">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <ul class="socialinks">
-                    <li class="social-icons">
-                        <a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
-                            <i class="pe-7s-linkedin"></i>
-                        </a>
-                    </li>
-                </ul>
+        </div>            
+    </section>
+    
+    <!-- Newsletter section -->
+    <section id="Newsletter" class="Newsletter-area">
+        <div class="container">
+            <h2 class="block_title">The Saturday Mindset Newsletter</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="Newsletter">
+                        <div class="Newsletter-wrap">    
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Weekly Productivity Insights</h3>
+                            <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="Newsletter">
+                        <div class="Newsletter-wrap">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Growth-Focused Strategies</h3>
+                            <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="Newsletter">
+                        <div class="Newsletter-wrap">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Real-Life Applications</h3>
+                            <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="Newsletter">
+                        <div class="Newsletter-wrap">
+                            <i class="fas fa-share-alt"></i>
+                            <h3>Join the Journey</h3>
+                            <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+    
+    <!-- Social Area -->
+    <div id="social">
+        <div class="container">
+            <ul class="socialinks">
+                <li class="social-icons">
+                    <a class="linkedin" href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 
-        
-        <!-- Footer Area -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p class="copyright">© Copyright <span id="currentYear"></span> Vanderson Baril</p>
-                    </div>
+    <!-- Footer Area -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="copyright">© Copyright <span id="currentYear"></span> Vanderson Baril</p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        <script>
-            // JavaScript to set the current year
-            document.getElementById("currentYear").textContent = new Date().getFullYear();
-        </script>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
 
-        <!-- Necessary scripts -->
-        <script src="assets/js/jquery-2.1.3.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script src="assets/js/jquery.actual.min.js"></script>
-        <script src="assets/js/smooth-scroll.js"></script>
-        <script src="assets/js/owl.carousel.js"></script>
-        <script src="assets/js/script.js"></script>
+    <!-- Necessary scripts -->
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/script.js"></script>
 
-    </body>
+</body>
 </html>
