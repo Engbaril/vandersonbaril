@@ -129,11 +129,19 @@
                 text-align: left;
             }
 
-            /* Set height for the social icon block */
+            /* Set height and alignment for the social icon block */
             .social-icons {
-                height: 0.5rem; /* Adjust this value to reduce the block height */
+                height: 1rem; /* Adjust this value to make the block shorter */
                 display: flex;
-                align-items: center; /* Center the icon vertically within the block */
+                align-items: center; /* Center icon vertically */
+                justify-content: flex-start; /* Align icon to the left */
+                padding-left: 0; /* Remove any padding */
+                margin-left: 0; /* Align left */
+            }
+
+            /* Adjust icon size if needed */
+            .social-icons a {
+                font-size: 1.5rem; /* Smaller icon */
             }
         </style>
     </head>
@@ -227,7 +235,7 @@
                     <div class="col-xs-12">
                         <ul class="socialinks">
                             <li class="social-icons">
-                                <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank" style="font-size: 2rem; color: #ffffff;">
+                                <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank" style="color: #ffffff;">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </li>
