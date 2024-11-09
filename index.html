@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js">
     <head>
@@ -129,26 +130,18 @@
                 text-align: left;
             }
 
-            /* Social Area Styling */
+            /* Reduce the height of the #social block */
             #social {
-                height: 3rem;
+                height: 3rem; /* Adjust this value as needed to control the height */
                 display: flex;
-                align-items: center;
-                background-color: #333;
-                padding: 0 20px;
+                align-items: center; /* Center contents vertically */
             }
 
+            /* Ensure the LinkedIn icon itself is unaffected */
             .social-icons {
                 display: flex;
                 align-items: center;
-                margin-right: auto; /* Aligns the icon to the left */
-            }
-
-            .social-icons a {
-                color: #ffffff;
-                font-size: 1.5rem;
-                margin-right: 10px;
-                text-decoration: none;
+                justify-content: flex-start; /* Align icon to the left */
             }
         </style>
     </head>
@@ -158,7 +151,7 @@
         <header id="header">
             <div class="center text-center">
                 <h1 class="bigheadline">Expert in Engineering and Project Management</h1>
-                <h3 class="subheadline">Transforming Project Management Insights Into Real-World Productivity Gains!</h3>
+                <h3 class="subheadline"></h3>
             </div>
             <div class="bottom">
                 <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent">
@@ -176,6 +169,9 @@
                             <a data-scroll href="#body" class="logo-text" style="font-size: 2.5rem; color: #FFFFFF;">Vanderson Baril</a>
                         </div>
                     </div>
+                    <div class="col-xs-6">
+                        <!-- The dropdown menu code has been removed -->
+                    </div>
                 </div>
             </div>            
         </section>
@@ -185,7 +181,42 @@
             <div class="container">
                 <h2 class="block_title">The Saturday Mindset Newsletter</h2>
                 <div class="row">
-                    <!-- Newsletter content here -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="Newsletter">
+                            <div class="Newsletter-wrap">    
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Weekly Productivity Insights</h3>
+                                <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="Newsletter">
+                            <div class="Newsletter-wrap">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Growth-Focused Strategies</h3>
+                                <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="Newsletter">
+                            <div class="Newsletter-wrap">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Real-Life Applications</h3>
+                                <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="Newsletter">
+                            <div class="Newsletter-wrap">
+                                <i class="fas fa-share-alt"></i>
+                                <h3>Join the Journey</h3>
+                                <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -200,10 +231,18 @@
 
         <!-- Social Area -->
         <div id="social">
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="socialinks">
+                            <li class="social-icons">
+                                <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank" style="color: #ffffff;">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -212,7 +251,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>© <span id="currentYear"></span> Vanderson Baril</p>
+                        <p class="copyright">© <span id="currentYear"></span> Vanderson Baril</p>
                     </div>
                 </div>
             </div>
@@ -221,7 +260,54 @@
         <!-- JavaScript for Displaying Posts -->
         <script>
             document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+            const posts = [
+                {
+                    title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
+                    snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
+                    link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
+                },
+                {
+                    title: "8 Essential Skills Every Project Leader Needs Today",
+                    snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
+                    link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
+                },
+                {
+                    title: "Project Management Trends to Watch in 2025",
+                    snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
+                    link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
+                }
+            ];
+
+            function displayPosts() {
+                const postsContainer = document.getElementById("posts-container");
+
+                posts.forEach(post => {
+                    const postElement = document.createElement("div");
+                    postElement.classList.add("post");
+
+                    postElement.innerHTML = `
+                        <h3>${post.title}</h3>
+                        <p>${post.snippet}</p>
+                        <a href="${post.link}" target="_blank">Read More</a>
+                    `;
+
+                    postsContainer.appendChild(postElement);
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", displayPosts);
         </script>
+
+        <!-- Necessary scripts -->
+        <script src="assets/js/jquery-2.1.3.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="assets/js/jquery.actual.min.js"></script>
+        <script src="assets/js/smooth-scroll.js"></script>
+        <script src="assets/js/owl.carousel.js"></script>
+        <script src="assets/js/script.js"></script>
 
     </body>
 </html>
+
