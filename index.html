@@ -130,13 +130,13 @@
                 text-align: left;
             }
 
-     #social {
+   #social {
     height: 2.5rem; /* Set the desired block height */
     display: flex;
-    align-items: center; /* Vertically centers the content */
+    align-items: center; /* Centers the icon vertically */
     justify-content: flex-start; /* Aligns content to the left */
     background-color: #333; /* Dark background color */
-    padding: 0; /* Remove any extra padding */
+    padding: 0; /* Removes any extra padding */
 }
 
 .socialinks {
@@ -145,14 +145,20 @@
 }
 
 .social-icons {
-    margin-left: 10px; /* Adds a small gap from the left side */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px; /* Small margin to prevent it from sticking to the edge */
 }
 
 .social-icons i {
-    font-size: 1.5rem; /* Adjust the icon size as needed */
-    color: #ffffff; /* Icon color for visibility */
-    line-height: 2.5rem; /* Matches the #social height to vertically center the icon */
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #ffffff; /* Set icon color */
+    height: 100%; /* Ensures it takes full height of the container */
+    display: flex;
+    align-items: center; /* Center the icon within the icon container */
 }
+
 
 
 
