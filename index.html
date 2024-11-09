@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js">
     <head>
@@ -284,11 +285,11 @@
                     const postElement = document.createElement("div");
                     postElement.classList.add("post");
 
-                    postElement.innerHTML = 
+                    postElement.innerHTML = `
                         <h3>${post.title}</h3>
                         <p>${post.snippet}</p>
                         <a href="${post.link}" target="_blank">Read More</a>
-                    ;
+                    `;
 
                     postsContainer.appendChild(postElement);
                 });
