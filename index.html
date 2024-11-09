@@ -22,8 +22,6 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                font-size: 2.5rem;
-                line-height: 1.5;
                 color: #000;
             }
 
@@ -31,21 +29,20 @@
                 font-size: 3rem;
                 font-weight: bold;
                 color: #FFFFFF;
-                font-family: Arial, sans-serif;
             }
 
             h3.subheadline {
                 font-size: 2.5rem;
                 font-weight: normal;
                 color: #FFFFFF;
-                font-family: Arial, sans-serif;
             }
 
-            h2.block_title {
+            h2.block_title, .posts-section h2 {
                 font-size: 2.5rem;
                 font-weight: bold;
                 color: #000;
-                font-family: Arial, sans-serif;
+                text-align: center; /* Centers text */
+                margin: 20px 0;
             }
 
             .Newsletter-wrap i {
@@ -57,27 +54,17 @@
                 font-size: 2rem;
                 font-weight: bold;
                 color: #333;
-                font-family: Arial, sans-serif;
             }
 
-            .Newsletter p {
+            .Newsletter p, .post p {
                 font-size: 1.7rem;
                 color: #666;
-                font-family: Arial, sans-serif;
             }
 
             .post h3 {
                 font-size: 2rem;
                 font-weight: bold;
                 color: #444;
-                font-family: Arial, sans-serif;
-            }
-
-            .post p {
-                font-size: 1.7rem;
-                font-weight: normal;
-                color: #666;
-                font-family: Arial, sans-serif;
             }
 
             .post a {
@@ -98,44 +85,30 @@
             footer p {
                 font-size: 1rem;
                 color: #666;
-                font-family: Arial, sans-serif;
             }
 
-            /* Additional spacing and layout adjustments */
             .Newsletter-area {
                 padding: 80px 0;
+                text-align: center;
             }
 
             #header {
                 padding: 80px 0;
+                text-align: center;
+                background-color: #333;
             }
 
             .posts-section {
                 padding: 50px 0;
                 background-color: #f9f9f9;
                 border-top: 1px solid #ddd;
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Centers all content within the section */
-                justify-content: center;
-                width: 100%;
-            }
-
-            #posts-section h2 {
-                text-align: center; /* Centers the text horizontally */
-                margin: 0; /* Removes any default margin */
-                padding: 20px 0; /* Adds padding to center vertically if needed */
-                font-size: 2rem; /* Adjust font size to fit design */
-                font-weight: bold; /* Makes the text bold for emphasis */
-                color: #333; /* Adjusts the text color */
+                text-align: center;
                 width: 100%;
             }
 
             .post {
-                margin-bottom: 30px;
+                margin: 30px auto;
                 max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
                 padding: 20px;
                 border: 1px solid #ddd;
                 border-radius: 5px;
@@ -144,25 +117,17 @@
             }
 
             #social {
-                height: 2rem; /* Set the height of the block */
-                display: flex;
-                align-items: center; /* Center content vertically */
-                justify-content: flex-start; /* Align content to the left */
-                background-color: #333; /* Background color */
-                padding-left: 0px; /* Space from the left edge */
-            }
-
-            .social-icons a {
+                height: 2rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 100%;
-                margin-top: 2px; /* Adjust this margin to fine-tune the vertical centering */
+                background-color: #333;
+                padding: 10px;
             }
 
             .social-icons i {
-                font-size: 2rem; /* Icon size */
-                color: #ffffff; /* Icon color */
+                font-size: 2rem;
+                color: #ffffff;
             }
         </style>
     </head>
@@ -172,29 +137,15 @@
         <header id="header">
             <div class="center text-center">
                 <h1 class="bigheadline">Expert in Engineering and Project Management</h1>
-                <h3 class="subheadline"></h3>
-            </div>
-            <div class="bottom">
-                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent">
-                    <i class="fas fa-angle-down" style="font-size: 2rem; color: #333;"></i>
-                </a>
+                <h3 class="subheadline">Transforming Insights into Success</h3>
             </div>
         </header>
 
         <!-- Navigation area -->
         <section id="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="logo">
-                            <a data-scroll href="#body" class="logo-text" style="font-size: 2.5rem; color: #FFFFFF;">Vanderson Baril</a>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <!-- The dropdown menu code has been removed -->
-                    </div>
-                </div>
-            </div>            
+            <div class="container text-center">
+                <a href="#body" class="logo-text" style="font-size: 2.5rem; color: #FFFFFF;">Vanderson Baril</a>
+            </div>          
         </section>
         
         <!-- Newsletter section -->
@@ -252,29 +203,15 @@
 
         <!-- Social Area -->
         <div id="social">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <ul class="socialinks">
-                            <li class="social-icons">
-                                <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank" style="color: #ffffff;">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
 
         <!-- Footer Area -->
         <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p class="copyright">© <span id="currentYear"></span> Vanderson Baril</p>
-                    </div>
-                </div>
+            <div class="container text-center">
+                <p>© <span id="currentYear"></span> Vanderson Baril</p>
             </div>
         </footer>
 
