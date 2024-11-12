@@ -10,112 +10,289 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom Styles -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            color: #333;
+            color: #000;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
         }
 
-        header {
-            background-color: #fff;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+        h1.bigheadline, h3.subheadline {
+            color: #fff;
             text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            color: #333;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            color: #777;
-        }
-
-        .content-wrapper {
+        #header {
+            height: 300px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 70vh;
-            padding: 40px 20px;
-            text-align: center;
+            justify-content: center;
+            background-color: #333;
+            color: #fff;
+            position: relative;
         }
 
-        .content-wrapper img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 20px;
+        h1.bigheadline {
+            font-size: 2.5rem;
+            font-weight: bold;
         }
 
-        .content-wrapper h2 {
+        h3.subheadline {
+            font-size: 1.5rem;
+        }
+
+        h2.block_title, h2.section_title {
             font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .content-wrapper p {
-            font-size: 1.25rem;
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer {
-            background-color: #fff;
-            padding: 20px;
+            font-weight: bold;
+            color: #000;
             text-align: center;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
         }
 
-        .footer p {
-            font-size: 1rem;
-            color: #777;
-        }
-
-        a {
-            color: #007bff;
+        .post a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #e07b70;
+            border-radius: 5px;
+            padding: 10px 20px;
             text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .post a:hover {
+            background-color: #d06560;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .posts-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .post {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #social {
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        #social i.fab.fa-linkedin {
+            font-size: 2rem;
+            color: #0167c0;
+        }
+
+        /* Horizontal Scroll Bar */
+        #scroll-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: #e07b70;
+            z-index: 1000;
+        }
+
+        /* About Me Section with Fixed Photo */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .about-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-self: center;
+        }
+
+        .about-text {
+            font-size: 1.5rem;
+            color: #666;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Responsive Styling */
+        @media (min-width: 768px) {
+            h1.bigheadline {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .about-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .about-text {
+                margin-left: 30px;
+                text-align: left;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .post {
+                max-width: 600px;
+            }
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 767px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .about-img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 15px;
+            }
+
+            .about-text {
+                margin-left: 0;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <h1>Vanderson Baril</h1>
-        <p>Helping individuals and companies streamline engineering and project management.</p>
+<body id="body">
+
+    <!-- Horizontal Scroll Bar -->
+    <div id="scroll-bar"></div>
+
+    <!-- Header Area -->
+    <header id="header">
+        <div class="text-center">
+            <h1 class="bigheadline">Expert in Engineering and Project Management</h1>
+            <h3 class="subheadline">Delivering impactful results and strategic insights</h3>
+        </div>
     </header>
 
-    <!-- Content Wrapper -->
-    <div class="content-wrapper">
-        <div>
-            <img src="assets/images/VB.jpg" alt="Vanderson Baril">
-            <h2>Welcome to My Corner of the Web</h2>
-            <p>
-                I'm Vanderson Baril, an engineering and project management expert with years of experience
-                delivering impactful results and strategic insights. My mission is to help companies and individuals 
-                achieve efficient project execution while fostering a collaborative team environment.
-            </p>
+    <!-- About Me Section -->
+    <section id="about-me" class="about-me-area">
+        <div class="container">
+            <h2 class="block_title">About Me</h2>
+            <div class="about-content">
+                <img src="assets/images/VB.jpg" alt="Vanderson Baril" class="about-img">
+                <p class="about-text">
+                    Hello! I'm Vanderson Baril, an expert in engineering and project management with years of experience delivering impactful results and strategic insights. My passion lies in creating solutions that drive projects forward efficiently while fostering team collaboration and innovation.
+                </p>
+            </div>
         </div>
+    </section>
+
+    <!-- Posts Section -->
+    <section id="posts-section" class="posts-section">
+        <h2 class="section_title">Insights for Success</h2>
+        <div id="posts-container">
+            <!-- Posts will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Social Area -->
+    <div id="social">
+        <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; <span id="currentYear"></span> Vanderson Baril - All Rights Reserved</p>
-    </div>
+    <!-- Footer Area -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; <span id="currentYear"></span> Vanderson Baril</p>
+        </div>
+    </footer>
 
+    <!-- JavaScript for Displaying Posts -->
     <script>
         document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        const posts = [
+            {
+                title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
+                snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
+                link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
+            },
+            {
+                title: "8 Essential Skills Every Project Leader Needs Today",
+                snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
+                link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
+            },
+            {
+                title: "Project Management Trends to Watch in 2025",
+                snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
+                link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
+            }
+        ];
+
+        function displayPosts() {
+            const postsContainer = document.getElementById("posts-container");
+
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.snippet}</p>
+                    <a href="${post.link}" target="_blank">Read More</a>
+                `;
+                postsContainer.appendChild(postElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", displayPosts);
     </script>
+
+    <!-- Necessary Scripts -->
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
