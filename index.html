@@ -1,297 +1,279 @@
 <!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <title>Vanderson Baril</title>
+<html lang="en">
+<head>
+    <title>Vanderson Baril</title>
 
-        <!-- meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <!-- stylesheets -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!-- Font Awesome for consistent icon support -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- Additional padding styles to adjust icon position, square/card size, and spacing -->
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                color: #000;
-            }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+
+        h1.bigheadline, h3.subheadline {
+            color: #fff;
+            text-align: center;
+        }
+
+        h1.bigheadline {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        h3.subheadline {
+            font-size: 1.5rem;
+        }
+
+        h2.block_title, h2.section_title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .newsletter-wrap i {
+            font-size: 1.8rem;
+            color: #e07b70;
+        }
+
+        .newsletter h3, .post h3 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .newsletter p, .post p {
+            font-size: 1.5rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .post a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #e07b70;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .post a:hover {
+            background-color: #d06560;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .newsletter-area, #header, .posts-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        #header {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .posts-section {
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .post {
+            margin: 20px auto;
+            max-width: 90%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #social {
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        #social i.fab.fa-linkedin {
+            font-size: 3rem;
+            color: #0167c0;
+        }
+
+        /* Responsive Styling */
+        @media (min-width: 768px) {
             h1.bigheadline {
-                font-size: 2.5rem;
-                font-weight: bold;
-                color: #FFFFFF;
-                text-align: center;
+                font-size: 3rem;
             }
 
-            h3.subheadline {
-                font-size: 1.5rem;
-                font-weight: normal;
-                color: #FFFFFF;
-                text-align: center;
-            }
-
-            h2.block_title, .posts-section h2 {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #000;
-                text-align: center;
-                margin: 20px 0;
-            }
-
-            .Newsletter-wrap i {
-                font-size: 1.8rem;
-                color: #e07b70;
-            }
-
-            .Newsletter h3 {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #333;
-                text-align: center;
-            }
-
-            .Newsletter p, .post p {
-                font-size: 1.5rem;
-                color: #666;
-                text-align: center;
-            }
-
-            .post h3 {
-                font-size: 1.8rem;
-                font-weight: bold;
-                color: #444;
-                text-align: center;
-            }
-
-            .post a {
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: #fff;
-                background-color: #e07b70;
-                border-radius: 5px;
-                padding: 10px 20px;
-                text-decoration: none;
-                transition: background-color 0.3s ease;
-                display: inline-block;
-                text-align: center;
-            }
-
-            .post a:hover {
-                background-color: #d06560;
-            }
-
-            footer p {
-                font-size: 1.2rem;
-                color: #666;
-            }
-
-            .Newsletter-area {
-                padding: 40px 0;
-                text-align: center;
-            }
-
-            #header {
-                padding: 40px 0;
-                text-align: center;
-                background-color: #333;
-            }
-
-            .posts-section {
-                padding: 30px 0;
-                background-color: #f9f9f9;
-                border-top: 1px solid #ddd;
-                text-align: center;
-                width: 100%;
-            }
-
-            .post {
-                margin: 20px auto;
-                max-width: 90%;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                background-color: #ffffff;
-                text-align: center;
-            }
-
-            #social {
-                height: 3rem;
+            .newsletter-area .col-md-3 {
                 display: flex;
-                align-items: center;
                 justify-content: center;
-                background-color: #333;
-                padding: 10px;
+                align-items: center;
             }
+        }
 
-            #social i.fab.fa-linkedin {
-    font-size: 3rem !important; /* Increase size */
-    color: #0167c0; /* Set color */
-}
-
-
-            /* Responsive styling */
-            @media (min-width: 768px) {
-                h1.bigheadline {
-                    font-size: 3rem;
-                }
-                
-                .Newsletter-area .col-md-3 {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+        @media (min-width: 992px) {
+            .post {
+                max-width: 600px;
             }
+        }
+    </style>
+</head>
+<body id="body">
 
-            @media (min-width: 992px) {
-                .post {
-                    max-width: 600px;
-                }
-            }
-        </style>
-    </head>
-    <body id="body">
+    <!-- Header Area -->
+    <header id="header">
+        <div class="text-center">
+            <h1 class="bigheadline">Expert in Engineering and Project Management</h1>
+            <h3 class="subheadline">Delivering impactful results and strategic insights</h3>
+        </div>
+    </header>
 
-        <!-- Header area -->
-        <header id="header">
-            <div class="center text-center">
-                <h1 class="bigheadline">Expert in Engineering and Project Management</h1>
-                <h3 class="subheadline"></h3>
-            </div>
-        </header>
+    <!-- Navigation Area -->
+    <section id="navigation">
+        <div class="container text-center">
+            <a href="#body" class="logo-text" style="font-size: 2.5rem; color: #FFFFFF;">Vanderson Baril</a>
+        </div>
+    </section>
 
-        <!-- Navigation area -->
-        <section id="navigation">
-            <div class="container text-center">
-                <a href="#body" class="logo-text" style="font-size: 2.5rem; color: #FFFFFF;">Vanderson Baril</a>
-            </div>          
-        </section>
-        
-        <!-- Newsletter section -->
-        <section id="Newsletter" class="Newsletter-area">
-            <div class="container">
-                <h2 class="block_title">The Saturday Mindset Newsletter</h2>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-12 mb-4">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">    
-                                <i class="fas fa-lightbulb"></i>
-                                <h3>Weekly Productivity Insights</h3>
-                                <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
-                            </div>
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-area">
+        <div class="container">
+            <h2 class="block_title">The Saturday Mindset Newsletter</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-12 mb-4">
+                    <div class="newsletter">
+                        <div class="newsletter-wrap">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Weekly Productivity Insights</h3>
+                            <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-12 mb-4">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">
-                                <i class="fas fa-rocket"></i>
-                                <h3>Growth-Focused Strategies</h3>
-                                <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
-                            </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12 mb-4">
+                    <div class="newsletter">
+                        <div class="newsletter-wrap">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Growth-Focused Strategies</h3>
+                            <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-12 mb-4">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">
-                                <i class="fas fa-check-circle"></i>
-                                <h3>Real-Life Applications</h3>
-                                <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
-                            </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12 mb-4">
+                    <div class="newsletter">
+                        <div class="newsletter-wrap">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Real-Life Applications</h3>
+                            <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-12 mb-4">
-                        <div class="Newsletter">
-                            <div class="Newsletter-wrap">
-                                <i class="fas fa-share-alt"></i>
-                                <h3>Join the Journey</h3>
-                                <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
-                            </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12 mb-4">
+                    <div class="newsletter">
+                        <div class="newsletter-wrap">
+                            <i class="fas fa-share-alt"></i>
+                            <h3>Join the Journey</h3>
+                            <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Section to Display Three Posts -->
-        <section id="posts-section" class="posts-section">
-            <h2>Insights for Success</h2>
-            <div id="posts-container">
-                <!-- Posts will be loaded here by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Social Area -->
-        <div id="social">
-            <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
         </div>
+    </section>
 
-        <!-- Footer Area -->
-        <footer>
-            <div class="container text-center">
-                <p>© <span id="currentYear"></span> Vanderson Baril</p>
-            </div>
-        </footer>
+    <!-- Posts Section -->
+    <section id="posts-section" class="posts-section">
+        <h2 class="section_title">Insights for Success</h2>
+        <div id="posts-container">
+            <!-- Posts will be dynamically loaded here -->
+        </div>
+    </section>
 
-        <!-- JavaScript for Displaying Posts -->
-        <script>
-            document.getElementById("currentYear").textContent = new Date().getFullYear();
+    <!-- Social Area -->
+    <div id="social">
+        <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
 
-            const posts = [
-                {
-                    title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
-                    snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
-                    link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
-                },
-                {
-                    title: "8 Essential Skills Every Project Leader Needs Today",
-                    snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
-                    link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
-                },
-                {
-                    title: "Project Management Trends to Watch in 2025",
-                    snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
-                    link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
-                }
-            ];
+    <!-- Footer Area -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; <span id="currentYear"></span> Vanderson Baril</p>
+        </div>
+    </footer>
 
-            function displayPosts() {
-                const postsContainer = document.getElementById("posts-container");
+    <!-- JavaScript for Displaying Posts -->
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-                posts.forEach(post => {
-                    const postElement = document.createElement("div");
-                    postElement.classList.add("post");
-
-                    postElement.innerHTML = `
-                        <h3>${post.title}</h3>
-                        <p>${post.snippet}</p>
-                        <a href="${post.link}" target="_blank">Read More</a>
-                    `;
-
-                    postsContainer.appendChild(postElement);
-                });
+        const posts = [
+            {
+                title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
+                snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
+                link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
+            },
+            {
+                title: "8 Essential Skills Every Project Leader Needs Today",
+                snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
+                link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
+            },
+            {
+                title: "Project Management Trends to Watch in 2025",
+                snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
+                link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
             }
+        ];
 
-            document.addEventListener("DOMContentLoaded", displayPosts);
-        </script>
+        function displayPosts() {
+            const postsContainer = document.getElementById("posts-container");
 
-        <!-- Necessary scripts -->
-        <script src="assets/js/jquery-2.1.3.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script src="assets/js/jquery.actual.min.js"></script>
-        <script src="assets/js/smooth-scroll.js"></script>
-        <script src="assets/js/owl.carousel.js"></script>
-        <script src="assets/js/script.js"></script>
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.snippet}</p>
+                    <a href="${post.link}" target="_blank">Read More</a>
+                `;
+                postsContainer.appendChild(postElement);
+            });
+        }
 
-    </body>
+        document.addEventListener("DOMContentLoaded", displayPosts);
+    </script>
+
+    <!-- Necessary Scripts -->
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
 </html>
