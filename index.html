@@ -30,8 +30,6 @@
             color: #fff;
             text-align: center;
             position: relative;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
         #header {
@@ -51,6 +49,7 @@
 
         h3.subheadline {
             font-size: 1.5rem;
+            margin-top: 10px;
         }
 
         h2.block_title, h2.section_title {
@@ -206,8 +205,8 @@
     <!-- Header Area -->
     <header id="header">
         <div class="text-center">
-            <h1 class="bigheadline">Expert in Engineering and Project Management</h1>
-            <h3 class="subheadline">Delivering impactful results and strategic insights</h3>
+            <h1 id="typingHeadline" class="bigheadline"></h1>
+            <h3 id="typingSubheadline" class="subheadline"></h3>
         </div>
     </header>
 
@@ -246,10 +245,39 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Displaying Posts -->
+    <!-- JavaScript for Typing Animation and Displaying Posts -->
     <script>
         document.getElementById("currentYear").textContent = new Date().getFullYear();
 
+        // Typing Animation for Headline and Subheadline
+        const headlineText = "Expert in Engineering and Project Management";
+        const subheadlineText = "Delivering impactful results and strategic insights";
+        let headlineIndex = 0;
+        let subheadlineIndex = 0;
+
+        function typeHeadline() {
+            if (headlineIndex < headlineText.length) {
+                document.getElementById("typingHeadline").textContent += headlineText.charAt(headlineIndex);
+                headlineIndex++;
+                setTimeout(typeHeadline, 50);
+            } else {
+                setTimeout(typeSubheadline, 500);
+            }
+        }
+
+        function typeSubheadline() {
+            if (subheadlineIndex < subheadlineText.length) {
+                document.getElementById("typingSubheadline").textContent += subheadlineText.charAt(subheadlineIndex);
+                subheadlineIndex++;
+                setTimeout(typeSubheadline, 50);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            typeHeadline();
+        });
+
+        // JavaScript for Displaying Posts
         const posts = [
             {
                 title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
