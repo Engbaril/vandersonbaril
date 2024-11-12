@@ -220,7 +220,16 @@
     </section>
 
     <!-- Social Area -->
-    <div id="social">
+        <!-- Subscription Form Section -->
+    <div class="footer-subscribe">
+        <h3>Subscribe to Our Newsletter</h3>
+        <form class="subscribe-form" onsubmit="event.preventDefault(); subscribeNewsletterFooter();">
+            <input type="email" class="subscribe-input" placeholder="Enter your email" required>
+            <button class="subscribe-button">Subscribe</button>
+        </form>
+    </div>
+
+<div id="social">
         <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
             <i class="fab fa-linkedin"></i>
         </a>
