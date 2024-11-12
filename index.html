@@ -20,7 +20,6 @@
 
     <!-- Custom Styles -->
     <style>
-        
         body {
             font-family: Arial, sans-serif;
             color: #000;
@@ -133,16 +132,6 @@
             color: #0167c0;
         }
 
-        
-
-        
-
-        
-
-        
-
-        
-
         /* Responsive Styling */
         @media (min-width: 768px) {
             h1.bigheadline {
@@ -165,22 +154,12 @@
             .post {
                 max-width: 600px;
             }
-
-            .subscribe-form {
-                gap: 20px;
-            }
         }
 
         /* Mobile Specific Adjustments */
         @media (max-width: 767px) {
             .footer-subscribe h3 {
                 font-size: 1.8rem;
-                margin-bottom: 15px;
-            }
-
-            .subscribe-button {
-                width: 100%;
-                max-width: none;
                 margin-bottom: 15px;
             }
 
@@ -202,8 +181,8 @@
         }
 
         .about-img {
-            position: relative;
-            top: 0;
+            position: sticky;
+            top: 20px;
             left: 0;
             transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
         }
@@ -217,7 +196,6 @@
             <h1 class="bigheadline">Expert in Engineering and Project Management</h1>
             <h3 class="subheadline">Delivering impactful results and strategic insights</h3>
         </div>
-        
     </header>
 
     <!-- Navigation Area -->
@@ -243,9 +221,6 @@
             <!-- Posts will be dynamically loaded here -->
         </div>
     </section>
-
-    <!-- Subscription Form Section -->
-    
 
     <!-- Social Area -->
     <div id="social">
@@ -302,20 +277,18 @@
 
         // About Me Image Scroll Effect
         document.addEventListener('scroll', function () {
-            const aboutSection = document.querySelector('#about-me');
             const aboutImage = document.querySelector('.about-img');
-            const scrollDistance = window.scrollY - aboutSection.offsetTop;
-            if (window.innerWidth > 768) { // Disable on small screens
-                if (scrollDistance > 0) {
-                    aboutImage.style.transform = `translateY(${scrollDistance * 0.5}px)`;
-                    const newSize = Math.max(100, 150 - scrollDistance * 0.2);
-                    aboutImage.style.width = `${newSize}px`;
-                    aboutImage.style.height = `${newSize}px`;
-                } else {
-                    aboutImage.style.transform = 'translateY(0)';
-                    aboutImage.style.width = '150px';
-                    aboutImage.style.height = '150px';
-                }
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 0) {
+                aboutImage.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+                const newSize = Math.max(80, 150 - scrollPosition * 0.1);
+                aboutImage.style.width = `${newSize}px`;
+                aboutImage.style.height = `${newSize}px`;
+            } else {
+                aboutImage.style.transform = 'translateY(0)';
+                aboutImage.style.width = '150px';
+                aboutImage.style.height = '150px';
             }
         });
     </script>
