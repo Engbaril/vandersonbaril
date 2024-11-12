@@ -152,8 +152,9 @@
             background-color: #f8f9fa;
             padding: 20px;
             border-top: 1px solid #ddd;
-            max-width: 600px;
+            max-width: 100%;
             margin: 0 auto;
+            text-align: center;
         }
 
         .subscribe-form {
@@ -162,6 +163,8 @@
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .subscribe-input {
@@ -169,8 +172,9 @@
             font-size: 1rem;
             border: 1px solid #ddd;
             border-radius: 5px;
-            width: calc(100% - 120px);
+            width: 100%;
             max-width: 300px;
+            margin-bottom: 10px;
         }
 
         /* Responsive Styling */
@@ -194,10 +198,6 @@
             .subscribe-form {
                 gap: 15px;
             }
-
-            .subscribe-input {
-                max-width: 400px;
-            }
         }
 
         /* Mobile Specific Adjustments */
@@ -210,6 +210,7 @@
             .subscribe-button {
                 width: 100%;
                 max-width: none;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -225,7 +226,7 @@
     </header>
 
     <!-- Navigation Area -->
-    
+    
     <!-- About Me Section -->
     <section id="about-me" class="about-me-area">
         <div class="container text-center">
@@ -239,9 +240,7 @@
         </div>
     </section>
 
-
 
-    <!-- Newsletter Section -->
     <!-- Posts Section -->
     <section id="posts-section" class="posts-section">
         <h2 class="section_title">Insights for Success</h2>
