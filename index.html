@@ -224,11 +224,13 @@
             top: 20px;
             margin-right: 20px;
             float: left;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
         }
 
         .about-me-area.scrolled-down .about-img {
             transform: translateX(-100px);
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
@@ -269,7 +271,7 @@
     <!-- Subscription Form Section -->
     <div class="footer-subscribe">
         <h3>Subscribe to Our Newsletter</h3>
-        <form class="subscribe-form" onsubmit="event.preventDefault(); subscribeNewsletterFooter();">
+        <form class="subscribe-form" action="https://thesaturdaymindset.com/subscribe" method="POST">
             <input type="email" class="subscribe-input" placeholder="Enter your email" required>
             <button class="subscribe-button">Subscribe</button>
         </form>
@@ -330,15 +332,12 @@
             alert('Thank you for subscribing to The Saturday Mindset Newsletter!');
         }
 
-        function subscribeNewsletterFooter() {
-            alert('Thank you for subscribing! Your email has been added to The Saturday Mindset Newsletter list.');
-        }
-
         document.addEventListener("DOMContentLoaded", displayPosts);
 
         // About Me Image Scroll Effect
         document.addEventListener('scroll', function () {
             const aboutSection = document.querySelector('#about-me');
+            const aboutImage = document.querySelector('.about-img');
             if (window.scrollY > aboutSection.offsetTop) {
                 aboutSection.classList.add('scrolled-down');
             } else {
