@@ -23,6 +23,7 @@
         body {
             font-family: Arial, sans-serif;
             color: #000;
+            line-height: 1.6;
         }
 
         h1.bigheadline, h3.subheadline {
@@ -99,7 +100,7 @@
 
         .newsletter-area, .posts-section {
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 20px;
         }
 
         .posts-section {
@@ -109,7 +110,7 @@
 
         .post {
             margin: 20px auto;
-            max-width: 90%;
+            max-width: 600px;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -127,12 +128,12 @@
         }
 
         #social i.fab.fa-linkedin {
-            font-size: 3rem;
+            font-size: 2rem;
             color: #0167c0;
         }
 
         .subscribe-button {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
             color: #fff;
             background-color: #e07b70;
@@ -151,6 +152,8 @@
             background-color: #f8f9fa;
             padding: 20px;
             border-top: 1px solid #ddd;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .subscribe-form {
@@ -166,7 +169,8 @@
             font-size: 1rem;
             border: 1px solid #ddd;
             border-radius: 5px;
-            width: 250px;
+            width: calc(100% - 120px);
+            max-width: 300px;
         }
 
         /* Responsive Styling */
@@ -190,6 +194,23 @@
             .subscribe-form {
                 gap: 15px;
             }
+
+            .subscribe-input {
+                max-width: 400px;
+            }
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 767px) {
+            .footer-subscribe h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .subscribe-button {
+                width: 100%;
+                max-width: none;
+            }
         }
     </style>
 </head>
@@ -204,11 +225,21 @@
     </header>
 
     <!-- Navigation Area -->
-    <section id="navigation">
+    
+    <!-- About Me Section -->
+    <section id="about-me" class="about-me-area">
         <div class="container text-center">
-            <a href="#body" class="logo-text" style="font-size: 2.5rem; color: #FFFFFF;">Vanderson Baril</a>
+            <h2 class="block_title">About Me</h2>
+            <div class="about-content">
+                <img src="/mnt/data/VB.jpg" alt="Vanderson Baril" class="about-img" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+                <p style="font-size: 1.5rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    Hello! I'm Vanderson Baril, an expert in engineering and project management with years of experience delivering impactful results and strategic insights. My passion lies in creating solutions that drive projects forward efficiently while fostering team collaboration and innovation.
+                </p>
+            </div>
         </div>
     </section>
+
+
 
     <!-- Newsletter Section -->
     <section id="newsletter" class="newsletter-area">
@@ -229,7 +260,7 @@
 
     <!-- Subscription Form Section -->
     <div class="footer-subscribe">
-        <h3>Subscribe to Newsletter</h3>
+        <h3>Subscribe to Our Newsletter</h3>
         <form class="subscribe-form" onsubmit="event.preventDefault(); subscribeNewsletterFooter();">
             <input type="email" class="subscribe-input" placeholder="Enter your email" required>
             <button class="subscribe-button">Subscribe</button>
