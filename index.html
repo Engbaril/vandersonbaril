@@ -188,6 +188,11 @@
                 justify-content: center;
                 align-items: center;
             }
+
+            .about-img {
+                float: left;
+                margin-right: 20px;
+            }
         }
 
         @media (min-width: 992px) {
@@ -212,6 +217,17 @@
                 max-width: none;
                 margin-bottom: 15px;
             }
+
+            .about-img {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 15px;
+                display: block;
+            }
+
+            .about-content {
+                text-align: center;
+            }
         }
 
         /* About Me Image Scroll Effect */
@@ -220,17 +236,10 @@
         }
 
         .about-img {
-            position: sticky;
-            top: 20px;
-            margin-right: 20px;
-            float: left;
+            position: relative;
+            top: 0;
+            left: 0;
             transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
-        }
-
-        .about-me-area.scrolled-down .about-img {
-            transform: translateX(-100px);
-            width: 100px;
-            height: 100px;
         }
     </style>
 </head>
@@ -328,20 +337,24 @@
             });
         }
 
-        function subscribeNewsletter() {
-            alert('Thank you for subscribing to The Saturday Mindset Newsletter!');
-        }
-
         document.addEventListener("DOMContentLoaded", displayPosts);
 
         // About Me Image Scroll Effect
         document.addEventListener('scroll', function () {
             const aboutSection = document.querySelector('#about-me');
             const aboutImage = document.querySelector('.about-img');
-            if (window.scrollY > aboutSection.offsetTop) {
-                aboutSection.classList.add('scrolled-down');
-            } else {
-                aboutSection.classList.remove('scrolled-down');
+            const scrollDistance = window.scrollY - aboutSection.offsetTop;
+            if (window.innerWidth > 768) { // Disable on small screens
+                if (scrollDistance > 0) {
+                    aboutImage.style.transform = `translateY(${scrollDistance * 0.5}px)`;
+                    const newSize = Math.max(100, 150 - scrollDistance * 0.2);
+                    aboutImage.style.width = `${newSize}px`;
+                    aboutImage.style.height = `${newSize}px`;
+                } else {
+                    aboutImage.style.transform = 'translateY(0)';
+                    aboutImage.style.width = '150px';
+                    aboutImage.style.height = '150px';
+                }
             }
         });
     </script>
