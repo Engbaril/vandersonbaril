@@ -41,6 +41,7 @@
             justify-content: center;
             background-color: #333;
             color: #fff;
+            position: relative;
         }
 
         h1.bigheadline {
@@ -132,6 +133,17 @@
             color: #0167c0;
         }
 
+        /* Horizontal Scroll Bar */
+        #scroll-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: #e07b70;
+            z-index: 1000;
+        }
+
         /* Responsive Styling */
         @media (min-width: 768px) {
             h1.bigheadline {
@@ -181,14 +193,21 @@
         }
 
         .about-img {
-            position: sticky;
-            top: 20px;
-            left: 0;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+            z-index: 1000;
         }
     </style>
 </head>
 <body id="body">
+
+    <!-- Horizontal Scroll Bar -->
+    <div id="scroll-bar"></div>
 
     <!-- Header Area -->
     <header id="header">
@@ -205,7 +224,7 @@
         <div class="container text-center">
             <h2 class="block_title">About Me</h2>
             <div class="about-content">
-                <img src="assets/images/VB.jpg" alt="Vanderson Baril" class="about-img" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+                <img src="assets/images/VB.jpg" alt="Vanderson Baril" class="about-img">
                 <p style="font-size: 1.5rem; color: #666; max-width: 600px; margin: 0 auto;">
                     Hello! I'm Vanderson Baril, an expert in engineering and project management with years of experience delivering impactful results and strategic insights. My passion lies in creating solutions that drive projects forward efficiently while fostering team collaboration and innovation.
                 </p>
@@ -282,13 +301,8 @@
 
             if (scrollPosition > 0) {
                 aboutImage.style.transform = `translateY(${scrollPosition * 0.2}px)`;
-                const newSize = Math.max(80, 150 - scrollPosition * 0.1);
-                aboutImage.style.width = `${newSize}px`;
-                aboutImage.style.height = `${newSize}px`;
             } else {
                 aboutImage.style.transform = 'translateY(0)';
-                aboutImage.style.width = '150px';
-                aboutImage.style.height = '150px';
             }
         });
     </script>
