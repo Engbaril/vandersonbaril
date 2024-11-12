@@ -123,6 +123,7 @@
             justify-content: center;
             background-color: #333;
             padding: 10px;
+            margin-top: 20px;
         }
 
         #social i.fab.fa-linkedin {
@@ -131,7 +132,7 @@
         }
 
         .subscribe-button {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #fff;
             background-color: #e07b70;
@@ -140,11 +141,32 @@
             padding: 10px 20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 20px;
         }
 
         .subscribe-button:hover {
             background-color: #d06560;
+        }
+
+        .footer-subscribe {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .subscribe-input {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px;
         }
 
         /* Responsive Styling */
@@ -164,24 +186,10 @@
             .post {
                 max-width: 600px;
             }
-        }
 
-        .footer-subscribe {
-            margin-top: 40px;
-        }
-
-        .subscribe-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subscribe-input {
-            padding: 10px;
-            font-size: 1.2rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            .subscribe-form {
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -219,9 +227,7 @@
         </div>
     </section>
 
-    <!-- Social Area -->
-        <!-- Subscription Form Section -->
-        <!-- Subscription Form Section -->
+    <!-- Subscription Form Section -->
     <div class="footer-subscribe">
         <h3>Subscribe to Our Newsletter</h3>
         <form class="subscribe-form" onsubmit="event.preventDefault(); subscribeNewsletterFooter();">
@@ -230,7 +236,8 @@
         </form>
     </div>
 
-<div id="social">
+    <!-- Social Area -->
+    <div id="social">
         <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
             <i class="fab fa-linkedin"></i>
         </a>
@@ -240,7 +247,7 @@
     <footer>
         <div class="container text-center">
             <p>&copy; <span id="currentYear"></span> Vanderson Baril</p>
-            </div>
+        </div>
     </footer>
 
     <!-- JavaScript for Displaying Posts -->
