@@ -269,7 +269,7 @@
     <!-- Subscription Form Section -->
     <div class="footer-subscribe">
         <h3>Subscribe to Our Newsletter</h3>
-        <form class="subscribe-form" action="https://thesaturdaymindset.com/subscribe" method="POST">
+        <form class="subscribe-form" onsubmit="event.preventDefault(); subscribeNewsletterFooter();">
             <input type="email" class="subscribe-input" placeholder="Enter your email" required>
             <button class="subscribe-button">Subscribe</button>
         </form>
@@ -337,21 +337,13 @@
         document.addEventListener("DOMContentLoaded", displayPosts);
 
         // About Me Image Scroll Effect
-        window.addEventListener('scroll', function () {
-            const aboutImage = document.querySelector('.about-img');
+        document.addEventListener('scroll', function () {
             const aboutSection = document.querySelector('#about-me');
-            const sectionTop = aboutSection.offsetTop;
-            const scrollPosition = window.scrollY;
-            
-            if (scrollPosition > sectionTop) {
-                aboutImage.style.transform = 'translateX(-100px)';
-                aboutImage.style.position = 'fixed';
-                aboutImage.style.top = '20px';
+            if (window.scrollY > aboutSection.offsetTop) {
+                aboutSection.classList.add('scrolled-down');
             } else {
-                aboutImage.style.transform = 'translateX(0)';
-                aboutImage.style.position = 'relative';
+                aboutSection.classList.remove('scrolled-down');
             }
-        });
         });
     </script>
 
