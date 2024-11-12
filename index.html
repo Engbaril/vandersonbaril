@@ -28,6 +28,18 @@
         h1.bigheadline, h3.subheadline {
             color: #fff;
             text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #header {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: #fff;
         }
 
         h1.bigheadline {
@@ -85,14 +97,9 @@
             color: #666;
         }
 
-        .newsletter-area, #header, .posts-section {
+        .newsletter-area, .posts-section {
             text-align: center;
             padding: 40px 0;
-        }
-
-        #header {
-            background-color: #333;
-            color: #fff;
         }
 
         .posts-section {
