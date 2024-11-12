@@ -130,6 +130,23 @@
             color: #0167c0;
         }
 
+        .subscribe-button {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #e07b70;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .subscribe-button:hover {
+            background-color: #d06560;
+        }
+
         /* Responsive Styling */
         @media (min-width: 768px) {
             h1.bigheadline {
@@ -171,44 +188,8 @@
     <section id="newsletter" class="newsletter-area">
         <div class="container">
             <h2 class="block_title">The Saturday Mindset Newsletter</h2>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-12 mb-4">
-                    <div class="newsletter">
-                        <div class="newsletter-wrap">
-                            <i class="fas fa-lightbulb"></i>
-                            <h3>Weekly Productivity Insights</h3>
-                            <p>Practical, actionable ideas every Saturday to help you manage projects and stay on top of your goals.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12 mb-4">
-                    <div class="newsletter">
-                        <div class="newsletter-wrap">
-                            <i class="fas fa-rocket"></i>
-                            <h3>Growth-Focused Strategies</h3>
-                            <p>Learn proven methods to boost your productivity and advance your career without burning out.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12 mb-4">
-                    <div class="newsletter">
-                        <div class="newsletter-wrap">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Real-Life Applications</h3>
-                            <p>Tips grounded in real project management experience, applicable to everyday challenges.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12 mb-4">
-                    <div class="newsletter">
-                        <div class="newsletter-wrap">
-                            <i class="fas fa-share-alt"></i>
-                            <h3>Join the Journey</h3>
-                            <p>Receive weekly guidance and insights to help you stay productive and balanced.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p>Every Saturday, you will receive a concise productivity tip that takes less than 5 minutes to read and will help you advance your projects.</p>
+            <button class="subscribe-button" onclick="subscribeNewsletter()">Subscribe Now</button>
         </div>
     </section>
 
@@ -269,6 +250,10 @@
                 `;
                 postsContainer.appendChild(postElement);
             });
+        }
+
+        function subscribeNewsletter() {
+            alert('Thank you for subscribing to The Saturday Mindset Newsletter!');
         }
 
         document.addEventListener("DOMContentLoaded", displayPosts);
