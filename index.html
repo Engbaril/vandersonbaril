@@ -272,41 +272,63 @@
             typeHeadline();
         });
 
-        // JavaScript for Displaying Posts
-        const posts = [
-            {
-                title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
-                snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
-                link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
-            },
-            {
-                title: "8 Essential Skills Every Project Leader Needs Today",
-                snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
-                link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
-            },
-            {
-                title: "Project Management Trends to Watch in 2025",
-                snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
-                link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
-            }
-        ];
+        <script>
+    // Existing animation function stays as-is
+    const headlineText = "Expert in Engineering and Project Management";
+    const subheadlineText = "Delivering impactful results and strategic insights";
+    let headlineIndex = 0;
+    let subheadlineIndex = 0;
 
-        function displayPosts() {
-            const postsContainer = document.getElementById("posts-container");
-
-            posts.forEach(post => {
-                const postElement = document.createElement("div");
-                postElement.classList.add("post");
-                postElement.innerHTML = `
-                    <h3>${post.title}</h3>
-                    <p>${post.snippet}</p>
-                    <a href="${post.link}" target="_blank">Read More</a>
-                `;
-                postsContainer.appendChild(postElement);
-            });
+    function typeHeadline() {
+        if (headlineIndex < headlineText.length) {
+            document.getElementById("typingHeadline").textContent += headlineText.charAt(headlineIndex);
+            headlineIndex++;
+            setTimeout(typeHeadline, 50);
+        } else {
+            setTimeout(typeSubheadline, 500);
         }
+    }
 
-        document.addEventListener("DOMContentLoaded", displayPosts);
+    function typeSubheadline() {
+        if (subheadlineIndex < subheadlineText.length) {
+            document.getElementById("typingSubheadline").textContent += subheadlineText.charAt(subheadlineIndex);
+            subheadlineIndex++;
+            setTimeout(typeSubheadline, 50);
+        }
+    }
+
+    function displayPostsFromRSS() {
+        const feedUrl = 'https://rss.beehiiv.com/feeds/vlHyTOceuU.xml';
+        const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+
+        fetch(proxyUrl)
+            .then(response => response.json())
+            .then(data => {
+                const postsContainer = document.getElementById("posts-container");
+                postsContainer.innerHTML = ''; // clear previous posts
+
+                data.items.slice(0, 5).forEach(post => {
+                    const postElement = document.createElement("div");
+                    postElement.classList.add("post");
+                    postElement.innerHTML = `
+                        <h3>${post.title}</h3>
+                        <p>${post.description}</p>
+                        <a href="${post.link}" target="_blank">Read More</a>
+                    `;
+                    postsContainer.appendChild(postElement);
+                });
+            })
+            .catch(error => {
+                console.error("Error loading RSS feed:", error);
+            });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        typeHeadline();
+        displayPostsFromRSS();
+    });
+</script>
+
     </script>
 
     <!-- Necessary Scripts -->
