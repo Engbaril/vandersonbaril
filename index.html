@@ -290,6 +290,29 @@
                 link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
             }
         ];
+
+
+        
+
+<!-- Purchase Section -->
+<section id="purchase-section" class="posts-section">
+  <h2 class="section_title">Buy My Digital Product</h2>
+  <p style="font-size: 1.3rem; max-width: 600px; margin: 0 auto 20px;">
+    Get instant access to my digital guide for mastering project management.
+  </p>
+  <a href="https://buy.stripe.com/aEUbMyddD01h532eUU" target="_blank">
+    <button id="buy-button" style="padding: 12px 24px; font-size: 16px; background-color: #635BFF; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      Loading price...
+    </button>
+  </a>
+</section>
+
+
+
+
+
+
+
         
 
         function displayPosts() {
@@ -318,5 +341,28 @@
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/owl.carousel.js"></script>
     <script src="assets/js/script.js"></script>
+
+
+
+
+<script>
+  fetch('/.netlify/functions/getPrice')
+    .then(res => res.json())
+    .then(data => {
+      const btn = document.getElementById('buy-button');
+      btn.textContent = `Buy Now – ${data.currency} $${data.amount}`;
+    })
+    .catch(err => {
+      console.error("Price load failed:", err);
+      document.getElementById('buy-button').textContent = "Buy Now";
+    });
+</script>
+
+
+
+
+
+
+    
 </body>
 </html>
