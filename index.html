@@ -277,36 +277,47 @@
 
             typeHeadline();
 
-            // Display blog posts
-            const posts = [
-                {
-                    title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
-                    snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
-                    link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
-                },
-                {
-                    title: "8 Essential Skills Every Project Leader Needs Today",
-                    snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
-                    link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
-                },
-                {
-                    title: "Project Management Trends to Watch in 2025",
-                    snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
-                    link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
-                }
-            ];
 
-            const postsContainer = document.getElementById("posts-container");
-            posts.forEach(post => {
-                const postElement = document.createElement("div");
-                postElement.classList.add("post");
-                postElement.innerHTML = `
-                    <h3>${post.title}</h3>
-                    <p>${post.snippet}</p>
-                    <a href="${post.link}" target="_blank">Read More</a>
-                `;
-                postsContainer.appendChild(postElement);
-            });
+
+
+
+// Load latest posts from Beehiiv RSS feed
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.beehiiv.com/feeds/4CbYJ8DgFp.xml')
+    .then(response => response.json())
+    .then(data => {
+        const postsContainer = document.getElementById("posts-container");
+        data.items.slice(0, 3).forEach(post => {
+            const snippet = post.description.split(' ').slice(0, 25).join(' ') + '...';
+            const postElement = document.createElement("div");
+            postElement.classList.add("post");
+            postElement.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${snippet}</p>
+                <a href="${post.link}" target="_blank">Read More</a>
+            `;
+            postsContainer.appendChild(postElement);
+        });
+    })
+    .catch(err => {
+        console.error("Failed to load Beehiiv posts:", err);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
             // Load Stripe price
             fetch('/.netlify/functions/getPrice')
