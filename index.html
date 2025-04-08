@@ -14,11 +14,8 @@
     <link rel="stylesheet" href="assets/css/owl.theme.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Custom Styles -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -121,7 +118,6 @@
             color: #0167c0;
         }
 
-        /* About Me Section with Fixed Photo */
         .about-content {
             display: flex;
             flex-direction: column;
@@ -145,7 +141,6 @@
             text-align: center;
         }
 
-        /* Responsive Styling */
         @media (min-width: 768px) {
             h1.bigheadline {
                 font-size: 3rem;
@@ -173,7 +168,6 @@
             }
         }
 
-        /* Mobile Specific Adjustments */
         @media (max-width: 767px) {
             .about-content {
                 flex-direction: column;
@@ -226,6 +220,19 @@
         </div>
     </section>
 
+    <!-- Purchase Section -->
+    <section id="purchase-section" class="posts-section">
+        <h2 class="section_title">Buy My Digital Product</h2>
+        <p style="font-size: 1.3rem; max-width: 600px; margin: 0 auto 20px;">
+            Get instant access to my digital guide for mastering project management.
+        </p>
+        <a href="https://buy.stripe.com/aEUbMyddD01h532eUU" target="_blank">
+            <button id="buy-button" style="padding: 12px 24px; font-size: 16px; background-color: #635BFF; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                Loading price...
+            </button>
+        </a>
+    </section>
+
     <!-- Social Area -->
     <div id="social">
         <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
@@ -240,60 +247,55 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Typing Animation and Displaying Posts -->
+    <!-- JavaScript for Typing + Posts + Stripe Price -->
     <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-        // Typing Animation for Headline and Subheadline
-        const headlineText = "Expert in Engineering and Project Management";
-        const subheadlineText = "Delivering impactful results and strategic insights";
-        let headlineIndex = 0;
-        let subheadlineIndex = 0;
+            // Typing animation
+            const headlineText = "Expert in Engineering and Project Management";
+            const subheadlineText = "Delivering impactful results and strategic insights";
+            let headlineIndex = 0;
+            let subheadlineIndex = 0;
 
-        function typeHeadline() {
-            if (headlineIndex < headlineText.length) {
-                document.getElementById("typingHeadline").textContent += headlineText.charAt(headlineIndex);
-                headlineIndex++;
-                setTimeout(typeHeadline, 50);
-            } else {
-                setTimeout(typeSubheadline, 500);
+            function typeHeadline() {
+                if (headlineIndex < headlineText.length) {
+                    document.getElementById("typingHeadline").textContent += headlineText.charAt(headlineIndex++);
+                    setTimeout(typeHeadline, 50);
+                } else {
+                    setTimeout(typeSubheadline, 500);
+                }
             }
-        }
 
-        function typeSubheadline() {
-            if (subheadlineIndex < subheadlineText.length) {
-                document.getElementById("typingSubheadline").textContent += subheadlineText.charAt(subheadlineIndex);
-                subheadlineIndex++;
-                setTimeout(typeSubheadline, 50);
+            function typeSubheadline() {
+                if (subheadlineIndex < subheadlineText.length) {
+                    document.getElementById("typingSubheadline").textContent += subheadlineText.charAt(subheadlineIndex++);
+                    setTimeout(typeSubheadline, 50);
+                }
             }
-        }
 
-        document.addEventListener("DOMContentLoaded", function() {
             typeHeadline();
-        });
 
-        // JavaScript for Displaying Posts
-        const posts = [
-            {
-                title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
-                snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
-                link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
-            },
-            {
-                title: "8 Essential Skills Every Project Leader Needs Today",
-                snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
-                link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
-            },
-            {
-                title: "Project Management Trends to Watch in 2025",
-                snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
-                link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
-            }
-        ];
+            // Display blog posts
+            const posts = [
+                {
+                    title: "8 Key Stakeholder Engagement Metrics for Measuring Project Success",
+                    snippet: "Building strong stakeholder relationships is essential, but how can you tell if your engagement...",
+                    link: "https://thesaturdaymindset.com/p/8-key-stakeholder-engagement-metrics-for-measuring-project-success"
+                },
+                {
+                    title: "8 Essential Skills Every Project Leader Needs Today",
+                    snippet: "Leading a project is no easy feat, right? It’s a role that calls for a diverse set of skills, from quick decision-making...",
+                    link: "https://thesaturdaymindset.com/p/8-essential-skills-every-project-leader-needs-today"
+                },
+                {
+                    title: "Project Management Trends to Watch in 2025",
+                    snippet: "As project management evolves, staying informed about emerging trends is essential for delivering projects...",
+                    link: "https://thesaturdaymindset.com/p/project-management-trends-to-watch-in-2025"
+                }
+            ];
 
-        function displayPosts() {
             const postsContainer = document.getElementById("posts-container");
-
             posts.forEach(post => {
                 const postElement = document.createElement("div");
                 postElement.classList.add("post");
@@ -304,12 +306,22 @@
                 `;
                 postsContainer.appendChild(postElement);
             });
-        }
 
-        document.addEventListener("DOMContentLoaded", displayPosts);
+            // Load Stripe price
+            fetch('/.netlify/functions/getPrice')
+                .then(res => res.json())
+                .then(data => {
+                    const btn = document.getElementById('buy-button');
+                    btn.textContent = `Buy Now – ${data.currency} $${data.amount}`;
+                })
+                .catch(err => {
+                    console.error("Price load failed:", err);
+                    document.getElementById('buy-button').textContent = "Buy Now";
+                });
+        });
     </script>
 
-    <!-- Necessary Scripts -->
+    <!-- JS Libraries -->
     <script src="assets/js/jquery-2.1.3.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -317,6 +329,5 @@
     <script src="assets/js/smooth-scroll.js"></script>
     <script src="assets/js/owl.carousel.js"></script>
     <script src="assets/js/script.js"></script>
-    
 </body>
 </html>
