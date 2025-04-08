@@ -346,16 +346,22 @@
 
 
 <script>
-  fetch('/.netlify/functions/getPrice')
-    .then(res => res.json())
-    .then(data => {
-      const btn = document.getElementById('buy-button');
-      btn.textContent = `Buy Now – ${data.currency} $${data.amount}`;
-    })
-    .catch(err => {
-      console.error("Price load failed:", err);
-      document.getElementById('buy-button').textContent = "Buy Now";
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    // Load blog posts
+    displayPosts();
+
+    // Load Stripe price
+    fetch('/.netlify/functions/getPrice')
+      .then(res => res.json())
+      .then(data => {
+        const btn = document.getElementById('buy-button');
+        btn.textContent = `Buy Now – ${data.currency} $${data.amount}`;
+      })
+      .catch(err => {
+        console.error("Price load failed:", err);
+        document.getElementById('buy-button').textContent = "Buy Now";
+      });
+  });
 </script>
 
 
