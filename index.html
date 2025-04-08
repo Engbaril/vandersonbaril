@@ -279,8 +279,6 @@
 
 
 
-
-
 // Load latest posts from Beehiiv RSS feed
 fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.beehiiv.com/feeds/4CbYJ8DgFp.xml')
     .then(response => response.json())
@@ -302,22 +300,6 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.beehiiv.com/feed
         console.error("Failed to load Beehiiv posts:", err);
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
 
             // Load Stripe price
             fetch('/.netlify/functions/getPrice')
