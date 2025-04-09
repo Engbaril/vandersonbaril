@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>Vanderson Baril</title>
+
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -129,6 +131,7 @@
             height: 180px;
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-self: center;
         }
 
         .about-text {
@@ -158,6 +161,32 @@
                 text-align: left;
             }
         }
+
+        @media (min-width: 992px) {
+            .post {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .about-img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 15px;
+            }
+
+            .about-text {
+                margin-left: 0;
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body id="body">
@@ -170,27 +199,47 @@
         </div>
     </header>
 
-    <!-- Purchase Section - CAPEX Planner -->
+    <!-- About Me Section -->
+    <section id="about-me" class="about-me-area">
+        <div class="container">
+            <h2 class="block_title">About Me</h2>
+            <div class="about-content">
+                <img src="assets/images/VB.jpg" alt="Vanderson Baril" class="about-img">
+                <p class="about-text">
+                    Hello! I'm Vanderson Baril, an expert in engineering and project management with years of experience delivering impactful results and strategic insights. My passion lies in creating solutions that drive projects forward efficiently while fostering team collaboration and innovation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Posts Section -->
+    <section id="posts-section" class="posts-section">
+        <h2 class="section_title">Insights for Success</h2>
+        <div id="posts-container">
+            <!-- Posts will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Purchase Section -->
     <section id="purchase-section" class="posts-section">
-        <h2 class="section_title">Stop Guessing. Start Planning.</h2>
-        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 20px;">
-            Do you struggle with scattered spreadsheets, shifting priorities, or last-minute CAPEX changes that leave your team out of sync? This CAPEX Planner solves that.
+        <h2 class="section_title">CAPEX Planner | Plan Your Capital Spending 5 Years in Advance </h2>
+        <p style="font-size: 1.3rem; max-width: 600px; margin: 0 auto 20px;">
+            Plan your capital expenses up to 5 years ahead with this simple and customisable Excel CAPEX Planner. 
+            Easily track investments, adjust plans as priorities shift, and keep your team informed. 
         </p>
-        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 20px;">
-            With our easy-to-use Excel tool, you’ll plan your capital expenses up to 5 years ahead, track investments effortlessly, and ensure everyone stays informed. Whether you're preparing board reports, justifying investments, or coordinating with multiple stakeholders – this tool keeps your budget aligned and your strategy sharp.
-        </p>
-        <ul style="text-align: left; max-width: 700px; margin: 0 auto 20px; font-size: 1.2rem;">
-            <li>✔ Fully customisable Excel format – no subscription needed</li>
-            <li>✔ Auto-calculations for totals, years, and project categories</li>
-            <li>✔ Ideal for project managers, engineers, and business leaders</li>
-            <li>✔ Build trust and visibility with crystal-clear CAPEX forecasting</li>
-        </ul>
         <a href="https://buy.stripe.com/aEUbMyddD01h532eUU" target="_blank">
-            <button id="buy-button" style="padding: 14px 28px; font-size: 18px; background-color: #635BFF; color: white; border: none; border-radius: 6px; cursor: pointer;">
-                Buy Now – One-time payment
+            <button id="buy-button" style="padding: 12px 24px; font-size: 16px; background-color: #635BFF; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                Loading price...
             </button>
         </a>
     </section>
+
+    <!-- Social Area -->
+    <div id="social">
+        <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
 
     <!-- Footer Area -->
     <footer>
@@ -199,26 +248,80 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Typing + Posts + Stripe Price -->
     <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-        const headline = "Take Control of Your Capital Planning";
-        const subheadline = "5-Year Excel CAPEX Planner for Real-World Results";
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-        let hIndex = 0, sIndex = 0;
-        const hElem = document.getElementById("typingHeadline");
-        const sElem = document.getElementById("typingSubheadline");
+            // Typing animation
+            const headlineText = "Expert in Engineering and Project Management";
+            const subheadlineText = "Delivering impactful results and strategic insights";
+            let headlineIndex = 0;
+            let subheadlineIndex = 0;
 
-        function typeEffect() {
-            if (hIndex < headline.length) {
-                hElem.textContent += headline.charAt(hIndex++);
-                setTimeout(typeEffect, 50);
-            } else if (sIndex < subheadline.length) {
-                sElem.textContent += subheadline.charAt(sIndex++);
-                setTimeout(typeEffect, 50);
+            function typeHeadline() {
+                if (headlineIndex < headlineText.length) {
+                    document.getElementById("typingHeadline").textContent += headlineText.charAt(headlineIndex++);
+                    setTimeout(typeHeadline, 50);
+                } else {
+                    setTimeout(typeSubheadline, 500);
+                }
             }
-        }
 
-        typeEffect();
+            function typeSubheadline() {
+                if (subheadlineIndex < subheadlineText.length) {
+                    document.getElementById("typingSubheadline").textContent += subheadlineText.charAt(subheadlineIndex++);
+                    setTimeout(typeSubheadline, 50);
+                }
+            }
+
+            typeHeadline();
+
+
+
+// Load latest posts from Beehiiv RSS feed
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.beehiiv.com/feeds/4CbYJ8DgFp.xml')
+    .then(response => response.json())
+    .then(data => {
+        const postsContainer = document.getElementById("posts-container");
+        data.items.slice(0, 3).forEach(post => {
+            const snippet = post.description.split(' ').slice(0, 25).join(' ') + '...';
+            const postElement = document.createElement("div");
+            postElement.classList.add("post");
+            postElement.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${snippet}</p>
+                <a href="${post.link}" target="_blank">Read More</a>
+            `;
+            postsContainer.appendChild(postElement);
+        });
+    })
+    .catch(err => {
+        console.error("Failed to load Beehiiv posts:", err);
+    });
+
+
+            // Load Stripe price
+            fetch('/.netlify/functions/getPrice')
+                .then(res => res.json())
+                .then(data => {
+                    const btn = document.getElementById('buy-button');
+                    btn.textContent = `Buy Now – ${data.currency} $${data.amount}`;
+                })
+                .catch(err => {
+                    console.error("Price load failed:", err);
+                    document.getElementById('buy-button').textContent = "Buy Now";
+                });
+        });
     </script>
+
+    <!-- JS Libraries -->
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
