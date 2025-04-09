@@ -2,30 +2,31 @@
 <html lang="en">
 <head>
     <title>Vanderson Baril</title>
+
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: Arial, sans-serif;
             color: #000;
-            line-height: 1.7;
-            font-size: 1.125rem;
+            line-height: 1.6;
         }
 
         h1.bigheadline, h3.subheadline {
             color: #fff;
             text-align: center;
+            position: relative;
         }
 
         #header {
@@ -35,10 +36,11 @@
             justify-content: center;
             background-color: #333;
             color: #fff;
+            position: relative;
         }
 
         h1.bigheadline {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
         }
 
@@ -48,38 +50,40 @@
         }
 
         h2.block_title, h2.section_title {
-            font-size: 2.25rem;
+            font-size: 2rem;
             font-weight: bold;
             color: #000;
             text-align: center;
-            margin: 30px 0;
-        }
-
-        .about-text {
-            font-size: 1.25rem;
-            color: #444;
-            max-width: 600px;
-            text-align: center;
+            margin: 20px 0;
         }
 
         .post a {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: bold;
             color: #fff;
             background-color: #e07b70;
             border-radius: 5px;
             padding: 10px 20px;
             text-decoration: none;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
             display: inline-block;
         }
 
         .post a:hover {
             background-color: #d06560;
+            animation: swing 1s ease;
+        }
+
+        @keyframes swing {
+            20% { transform: rotate(15deg); }
+            40% { transform: rotate(-10deg); }
+            60% { transform: rotate(5deg); }
+            80% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
         }
 
         footer p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #666;
         }
 
@@ -93,24 +97,10 @@
         .post {
             margin: 20px auto;
             max-width: 600px;
-            padding: 24px;
+            padding: 20px;
             border: 1px solid #ddd;
-            border-radius: 6px;
+            border-radius: 5px;
             background-color: #fff;
-        }
-
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .about-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         #social {
@@ -119,35 +109,97 @@
             align-items: center;
             justify-content: center;
             background-color: #333;
+            padding: 10px;
             margin-top: 20px;
         }
 
-        #social i.fab {
+        #social i.fab.fa-linkedin {
             font-size: 2rem;
             color: #0167c0;
         }
 
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .about-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-self: center;
+        }
+
+        .about-text {
+            font-size: 1.5rem;
+            color: #666;
+            max-width: 600px;
+            text-align: center;
+        }
+
         @media (min-width: 768px) {
+            h1.bigheadline {
+                font-size: 3rem;
+            }
+
             .about-content {
                 flex-direction: row;
                 align-items: center;
             }
 
+            .about-img {
+                width: 200px;
+                height: 200px;
+            }
+
             .about-text {
-                text-align: left;
                 margin-left: 30px;
+                text-align: left;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .post {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .about-img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 15px;
+            }
+
+            .about-text {
+                margin-left: 0;
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
-<body>
+<body id="body">
+
+    <!-- Header Area -->
     <header id="header">
-        <div>
+        <div class="text-center">
             <h1 id="typingHeadline" class="bigheadline"></h1>
             <h3 id="typingSubheadline" class="subheadline"></h3>
         </div>
     </header>
 
+    <!-- About Me Section -->
     <section id="about-me" class="about-me-area">
         <div class="container">
             <h2 class="block_title">About Me</h2>
@@ -160,68 +212,119 @@
         </div>
     </section>
 
+    <!-- Posts Section -->
     <section id="posts-section" class="posts-section">
         <h2 class="section_title">Insights for Success</h2>
-        <div id="posts-container"></div>
-    </section>
-
-    <section class="posts-section" style="background-color: #fff; padding: 60px 20px;">
-        <div style="max-width: 900px; margin: 0 auto 40px; text-align: center;">
-            <h2 style="font-size: 3rem; font-weight: 700; color: #111; margin-bottom: 40px; line-height: 1.3;">
-                Finally, a Smarter Way to Plan CAPEX —<br> Without Building Spreadsheets From Scratch
-            </h2>
-            <p style="font-size: 1.25rem; line-height: 1.9; color: #333; margin-bottom: 20px;">
-                Stop spending hours formatting spreadsheets, chasing team updates, or getting stuck justifying budget numbers.
-            </p>
-            <p style="font-size: 1.25rem; line-height: 1.9; color: #333; margin-bottom: 20px;">
-                The CAPEX Planner is your all-in-one Excel solution — custom-built for engineers, project managers, and decision-makers.
-                It’s designed to bring structure, clarity, and visibility so you can lead confidently, without wasting time.
-            </p>
-            <p style="font-size: 1.25rem; line-height: 1.9; color: #333;">
-                Every field is editable. Every chart is dynamic. Every tab is ready to go. You’ll save hours each week while reporting more accurately and delivering results faster.
-            </p>
-        </div>
-
-        <!-- Dynamic content blocks with lightbox zoom can be added here -->
-
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="https://buy.stripe.com/aEUbMyddD01h532eUU" target="_blank">
-                <button style="
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                    background-color: #635BFF;
-                    color: white;
-                    padding: 14px 32px;
-                    border: none;
-                    border-radius: 6px;
-                    cursor: pointer;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                ">
-                    Buy Now – Instant Access
-                </button>
-            </a>
+        <div id="posts-container">
+            <!-- Posts will be dynamically loaded here -->
         </div>
     </section>
 
+
+
+
+
+<section class="posts-section" style="background-color: #ffffff; padding: 60px 20px;">
+  <div style="max-width: 900px; margin: 0 auto 30px; text-align: center;">
+    <h2 style="font-size: 3rem; font-weight: bold; color: #000; margin-bottom: 30px;">
+      Finally, a Smarter Way to Plan CAPEX — Without Building Spreadsheets From Scratch
+    </h2>
+    <p style="font-size: 1.6rem; line-height: 1.9; color: #333;">
+      Stop spending hours formatting spreadsheets, chasing team updates, or getting stuck justifying budget numbers.
+    </p>
+    <p style="font-size: 1.6rem; line-height: 1.9; color: #333;">
+      The CAPEX Planner is your all-in-one Excel solution — custom-built for engineers, project managers, and decision-makers. It’s designed to bring structure, clarity, and visibility so you can lead confidently, without wasting time.
+    </p>
+    <p style="font-size: 1.6rem; line-height: 1.9; color: #333;">
+      Every field is editable. Every chart is dynamic. Every tab is ready to go. You’ll save hours each week while reporting more accurately and delivering results faster.
+    </p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1100px; margin: 0 auto;">
+    <div style="flex: 1 1 400px; max-width: 480px; text-align: center; border: 2px solid #ccc; padding: 16px; border-radius: 12px;">
+      <a href="#" onclick="window.open('assets/images/Introducing CAPEX Planner.png', '_blank'); return false;">
+        <img src="assets/images/Introducing CAPEX Planner.png" alt="Introducing the CAPEX Planner" style="width: 100%; border-radius: 8px; cursor: zoom-in;">
+      </a>
+      <p style="margin-top: 12px; font-size: 1.5rem;">
+        🧭 <strong>Quick Start Guide:</strong> Get set up in minutes with clear instructions.
+      </p>
+    </div>
+
+    <div style="flex: 1 1 400px; max-width: 480px; text-align: center; border: 2px solid #ccc; padding: 16px; border-radius: 12px;">
+      <a href="#" onclick="window.open('assets/images/CAPEX Planner Dashboard.png', '_blank'); return false;">
+        <img src="assets/images/CAPEX Planner Dashboard.png" alt="CAPEX Dashboard" style="width: 100%; border-radius: 8px; cursor: zoom-in;">
+      </a>
+      <p style="margin-top: 12px; font-size: 1.5rem;">
+        📊 <strong>Dashboard View:</strong> Spot trends, gaps, and priorities instantly.
+      </p>
+    </div>
+
+    <div style="flex: 1 1 400px; max-width: 480px; text-align: center; border: 2px solid #ccc; padding: 16px; border-radius: 12px;">
+      <a href="#" onclick="window.open('assets/images/CAPEX per Year.png', '_blank'); return false;">
+        <img src="assets/images/CAPEX per Year.png" alt="CAPEX per Year Overview" style="width: 100%; border-radius: 8px; cursor: zoom-in;">
+      </a>
+      <p style="margin-top: 12px; font-size: 1.5rem;">
+        📅 <strong>Annual Tracker:</strong> Know what’s approved, what’s started, and what’s pending.
+      </p>
+    </div>
+
+    <div style="flex: 1 1 400px; max-width: 480px; text-align: center; border: 2px solid #ccc; padding: 16px; border-radius: 12px;">
+      <a href="#" onclick="window.open('assets/images/CAPEX Planner 5 Years.png', '_blank'); return false;">
+        <img src="assets/images/CAPEX Planner 5 Years.png" alt="5-Year CAPEX Tracker" style="width: 100%; border-radius: 8px; cursor: zoom-in;">
+      </a>
+      <p style="margin-top: 12px; font-size: 1.5rem;">
+        📁 <strong>5-Year Tracker:</strong> Manage CAPEX across categories, plants, and justifications.
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 60px;">
+    <a href="https://buy.stripe.com/aEUbMyddD01h532eUU" target="_blank">
+      <button style="
+        font-size: 1.8rem;
+        font-weight: bold;
+        background-color: #635BFF;
+        color: white;
+        padding: 16px 38px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      ">
+        Buy Now – Instant Access
+      </button>
+    </a>
+  </div>
+</section>
+
+
+    
+
+    <!-- Social Area -->
     <div id="social">
         <a href="https://www.linkedin.com/in/vandersonbaril/" target="_blank">
             <i class="fab fa-linkedin"></i>
         </a>
     </div>
 
+    <!-- Footer Area -->
     <footer>
         <div class="container text-center">
             <p>&copy; <span id="currentYear"></span> Vanderson Baril</p>
         </div>
     </footer>
 
+    <!-- JavaScript for Typing + Posts + Stripe Price -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("currentYear").textContent = new Date().getFullYear();
 
+            // Typing animation
             const headlineText = "Expert in Engineering and Project Management";
             const subheadlineText = "Delivering impactful results and strategic insights";
-            let headlineIndex = 0, subheadlineIndex = 0;
+            let headlineIndex = 0;
+            let subheadlineIndex = 0;
 
             function typeHeadline() {
                 if (headlineIndex < headlineText.length) {
@@ -241,27 +344,51 @@
 
             typeHeadline();
 
-            fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.beehiiv.com/feeds/4CbYJ8DgFp.xml')
+
+
+// Load latest posts from Beehiiv RSS feed
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rss.beehiiv.com/feeds/4CbYJ8DgFp.xml')
+    .then(response => response.json())
+    .then(data => {
+        const postsContainer = document.getElementById("posts-container");
+        data.items.slice(0, 3).forEach(post => {
+            const snippet = post.description.split(' ').slice(0, 25).join(' ') + '...';
+            const postElement = document.createElement("div");
+            postElement.classList.add("post");
+            postElement.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${snippet}</p>
+                <a href="${post.link}" target="_blank">Read More</a>
+            `;
+            postsContainer.appendChild(postElement);
+        });
+    })
+    .catch(err => {
+        console.error("Failed to load Beehiiv posts:", err);
+    });
+
+
+            // Load Stripe price
+            fetch('/.netlify/functions/getPrice')
                 .then(res => res.json())
                 .then(data => {
-                    const postsContainer = document.getElementById("posts-container");
-                    data.items.slice(0, 3).forEach(post => {
-                        const snippet = post.description.split(' ').slice(0, 25).join(' ') + '...';
-                        const postElement = document.createElement("div");
-                        postElement.classList.add("post");
-                        postElement.innerHTML = `
-                            <h3>${post.title}</h3>
-                            <p>${snippet}</p>
-                            <a href="${post.link}" target="_blank">Read More</a>
-                        `;
-                        postsContainer.appendChild(postElement);
-                    });
+                    const btn = document.getElementById('buy-button');
+                    btn.textContent = `Buy Now – ${data.currency} $${data.amount}`;
                 })
-                .catch(err => console.error("Beehiiv fetch error:", err));
+                .catch(err => {
+                    console.error("Price load failed:", err);
+                    document.getElementById('buy-button').textContent = "Buy Now";
+                });
         });
     </script>
 
+    <!-- JS Libraries -->
     <script src="assets/js/jquery-2.1.3.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
